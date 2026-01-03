@@ -18,6 +18,7 @@
 
       this.currentIndex = 0;
       this.isDragging = false;
+      this.isTouching = false;
       this.startX = 0;
       this.scrollLeft = 0;
 
@@ -59,8 +60,8 @@
       this.viewport.addEventListener('mouseleave', () => this.handleDragEnd());
 
       // Touch events
-      this.viewport.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
-      this.viewport.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: true });
+      this.viewport.addEventListener('touchstart', (e) => this.handleTouchStart(e));
+      this.viewport.addEventListener('touchmove', (e) => this.handleTouchMove(e));
       this.viewport.addEventListener('touchend', () => this.handleTouchEnd());
 
       // Keyboard navigation
@@ -95,19 +96,24 @@
     }
 
     handleTouchStart(e) {
-      this.startX = e.touches[0].pageX;
-      this.scrollLeft = this.viewport.scrollLeft;
-    }
+  this.isTouching = true;
+  this.startX = e.touches[0].pageX;
+  this.scrollLeft = this.viewport.scrollLeft;
+  this.viewport.style.scrollBehavior = 'auto';
+}
 
     handleTouchMove(e) {
-      const x = e.touches[0].pageX;
-      const walk = (this.startX - x);
-      this.viewport.scrollLeft = this.scrollLeft + walk;
-    }
+  if (!this.isTouching) return;
+  const x = e.touches[0].pageX;
+  const walk = (this.startX - x) * 1.5;
+  this.viewport.scrollLeft = this.scrollLeft + walk;
+}
 
     handleTouchEnd() {
-      this.snapToNearestSlide();
-    }
+  this.isTouching = false;
+  this.viewport.style.scrollBehavior = 'smooth';
+  this.snapToNearestSlide();
+}
 
     handleKeyboard(e) {
       if (e.key === 'ArrowLeft') {
