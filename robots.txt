@@ -1,0 +1,8 @@
+# robots.txt for GF PriceChecker
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://gfpricechecker.com/sitemap.xml
