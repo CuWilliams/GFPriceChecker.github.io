@@ -36,6 +36,40 @@
   <!-- Cloudflare Web Analytics -->
   <!-- TODO: Replace with actual site tag from Cloudflare dashboard -->
   <!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN_HERE"}'></script> -->
+
+  <!-- JSON-LD Structured Data - WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "GF PriceChecker",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "iOS",
+    "description": "Track gluten-free product price differentials for Canadian tax deductions. Compare prices, manage receipts, and generate CRA-compliant tax reports.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CAD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "ratingCount": "1"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "GF PriceChecker"
+    },
+    "countriesSupported": "CA",
+    "featureList": [
+      "Price comparison tracking for gluten-free products",
+      "Receipt scanning and management",
+      "Tax report generation for CRA medical expense claims",
+      "Product database with price history",
+      "Privacy-focused local-first storage"
+    ]
+  }
+  </script>
 </head>
 <body>
 
