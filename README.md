@@ -79,7 +79,7 @@ If you want to build an Android version or contribute significant features, plea
 
 ## Contact
 
-- **GitHub Issues:** Disabled
+- **GitHub Issues:** [@CuWilliams](https://github.com/CuWilliams)
 - **X (Twitter):** [@CurtisWill3z](https://x.com/CurtisWill3z)
 - **LinkedIn:** [Curtis Williams](https://www.linkedin.com/in/curtis-williams-154382b3)
 
