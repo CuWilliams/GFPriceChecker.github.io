@@ -75,6 +75,9 @@
     });
   }
 
+  // Expose initAccordions to global scope for dynamic content loading
+  window.initAccordions = initAccordions;
+
   /**
    * Set active navigation link based on current page
    */

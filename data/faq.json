@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "question": "What is GF PriceChecker?",
+    "answer": "GF PriceChecker is an iOS app designed to help Canadians track the price differential between gluten-free and regular products. This information is essential for claiming medical expense deductions on your Canadian tax return, as the CRA allows you to deduct the incremental cost of gluten-free products if you have celiac disease or gluten intolerance."
+  },
+  {
+    "id": "2",
+    "question": "How does tracking price differentials help with tax deductions?",
+    "answer": "The Canada Revenue Agency (CRA) allows individuals with celiac disease or gluten intolerance to claim the incremental cost of gluten-free products as a medical expense. GF PriceChecker helps you accurately track and document these price differences, making it easier to calculate your eligible deductions and maintain records for your tax filing."
+  },
+  {
+    "id": "3",
+    "question": "When will the app be available?",
+    "answer": "GF PriceChecker is currently in development. We're working hard to create a user-friendly experience that simplifies price tracking and record-keeping. Check back on this website for updates on our progress and announcements about beta testing opportunities and the official launch date."
+  }
+]
