@@ -685,7 +685,7 @@
 /* Desktop */
 @media (min-width: 1024px) {
   .carousel-slide {
-    width: 360px;
+    width: 331px;
     height: 720px;
   }
 }
