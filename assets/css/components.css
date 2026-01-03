@@ -562,7 +562,7 @@
 
 .carousel-slide {
   flex: 0 0 auto;
-  width: 280px;
+  width: 257px;
   height: 560px;
   border-radius: var(--border-radius);
   overflow: hidden;
