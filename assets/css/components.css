@@ -523,3 +523,222 @@
   background-color: var(--error);
   color: var(--white);
 }
+
+/* ========================================
+   CAROUSEL
+   ======================================== */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+}
+
+.carousel-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.carousel-viewport:active {
+  cursor: grabbing;
+}
+
+.carousel-track {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 560px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--light-gray);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  position: relative;
+}
+
+.carousel-slide:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Stacked visual effect - progressive z-index and opacity */
+.carousel-slide:nth-child(n+2) {
+  opacity: 0.95;
+}
+
+.carousel-slide:nth-child(n+3) {
+  opacity: 0.9;
+}
+
+.carousel-slide:nth-child(n+4) {
+  opacity: 0.85;
+}
+
+/* Carousel controls */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+}
+
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: var(--white);
+  border: 2px solid var(--primary-blue);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--primary-blue);
+}
+
+.carousel-button:hover:not(:disabled) {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+.carousel-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: var(--medium-gray);
+  color: var(--medium-gray);
+}
+
+.carousel-button:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+.carousel-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Progress indicator */
+.carousel-progress {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 0 var(--space-lg) var(--space-lg);
+}
+
+.carousel-progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--medium-gray);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
+}
+
+.carousel-progress-dot.is-active {
+  background-color: var(--primary-blue);
+  transform: scale(1.25);
+}
+
+.carousel-progress-dot:hover {
+  background-color: var(--primary-blue);
+}
+
+.carousel-progress-dot:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .carousel-slide {
+    width: 320px;
+    height: 640px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .carousel-slide {
+    width: 360px;
+    height: 720px;
+  }
+}
+
+/* ========================================
+   VIDEO PLAYER
+   ======================================== */
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--black);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-grid {
+  display: grid;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.video-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.video-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--black);
+  margin: 0;
+}
+
+.video-description {
+  font-size: var(--text-sm);
+  color: var(--dark-gray);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
