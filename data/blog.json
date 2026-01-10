@@ -1,15 +1,57 @@
 [
   {
-  "id": "2024-12-24-why-this-matters",
-  "date": "2024-12-24",
+  "id": "2025-12-24-why-this-matters",
+  "date": "2025-12-24",
   "title": "Why This Matters",
   "content": "So… I feel it might be important to document this journey. Not sure why. I will probably end up scrapping the idea soon enough, but for now, I'll give it a go.\n\nRecently, someone near and dear to me was diagnosed with celiac disease. We'd known for some time and had been preparing for it—symptoms were clear, testing was underway—but the formal diagnosis has now arrived. It means permanent dietary changes, constant vigilance, and, as we have discovered, significantly higher grocery bills.\n\nGluten-free products cost more. Sometimes double, sometimes triple the price of regular items. And the Canada Revenue Agency allows you to claim that difference as a medical expense. Sounds helpful, right? Except the process is a nightmare. You have to track every purchase, compare prices, keep receipts, calculate differentials, and compile everything for tax filing. We're talking hundreds of transactions per year—spreadsheets, receipts, and all that crap—plus the ever-looming threat of an audit.\n\nI looked for an app to handle this. Nothing exists. Nothing practical, anyway. There are receipt scanners, sure, but nothing purpose-built for celiac tax claims in Canada. So I decided to build one.\n\nI'm learning to program as a retirement hobby (seriously), and I've recently started working with Claude.ai to build things like apps and websites. This feels important enough to figure out. If I can make it work, I'll release it for free. No ads. No subscriptions. Just a tool to help people manage something that's already hard enough.\n\nLet's see how this goes.\n\nCurtis"
 },
 {
-  "id": "2024-12-27-and-away-we-go",
-  "date": "2024-12-27",
+  "id": "2025-12-27-and-away-we-go",
+  "date": "2025-12-27",
   "title": "And Away We Go",
   "content": "I've been plodding along with AI this past year, taking a somewhat pragmatic approach to coding so I could at least try to learn something. This time though, I'm throwing that out the window. Full acceleration mode. The emphasis is on getting this thing built—sooner rather than later—because a new tax year is about to start.\n\nIt's all about \"prompting\" apparently. At least that's what everyone keeps going on about when working with AI. For this exercise though, I went old-school Project Management: built a full Technical Specification for the app and a detailed Execution Plan to create it.\n\nBy end of day, I had a working prototype. Manual entry, camera integration, OCR for pulling data off product labels—the foundations are in place.\n\nSo far, so good.\n\nCurtis"
+},
+{
+  "id": "2025-12-28-continuing-the-build",
+  "date": "2025-12-28",
+  "title": "Continuing the Build",
+  "content": "Today was all about receipt verification. The goal: scan a shopping receipt, have the app figure out which products are on it, and mark them as verified for tax purposes. Sounds simple enough, right?\n\nWell, we'll see. I've got the pieces in place, but theory and practice aren't always the same thing. Time for a field test—meaning I actually need to go to a grocery store and see if this works in real life.\n\nStay tuned.\n\nCurtis"
+},
+{
+  "id": "2025-12-29-large-day",
+  "date": "2025-12-29",
+  "title": "Large Day",
+  "content": "Finished the app today. Well, \"finished\" in the sense that it does everything I originally planned: tracks products, scans receipts, generates tax reports, exports to PDF and CSV. The whole thing. A few days ago this was just an idea, and now it's... real? Functional? Ready to test?\n\nI even made a logo for it. GF PriceChecker now has an actual identity instead of placeholder icons everywhere. Small thing, but it makes it feel less like a prototype and more like something people might actually use.\n\nTomorrow I'm taking this thing to Costco for field trials. I have historically avoided that place like the plague. Now I'm excited about it. Coding does strange things to your brain.\n\nTalk soon,\n\nCurtis"
+},
+{
+  "id": "2025-12-31-field-trials-and-tribulations",
+  "date": "2025-12-31",
+  "title": "Field Trials... and Tribulations",
+  "content": "Took the app to Costco for its first real test. \"Interesting\" would be the diplomatic word. Generated an awfully long list of stuff to fix, enhance, change, omit—you name it. It's a good thing I'm retired.\n\nSpent yesterday and a bit of today (before the New Year's Eve dart tourney started) sorting through the todo list and knocking off what I could. The rest will have to wait for 2026.\n\nHappy New Year everyone.\n\nCurtis"
+},
+{
+  "id": "2026-01-03-back-at-it-kind-of",
+  "date": "2026-01-03",
+  "title": "Back at It. Kind of…",
+  "content": "New Year, time to get back to the app. But first—I need a website. If I'm going to reach out to celiac organizations and see if anyone actually wants this thing, I should probably look somewhat legitimate.\n\nPlus there's a wrinkle: the Canadian Celiac Association is currently lobbying for a flat tax credit, which if approved, would make this entire app redundant. So yeah, as interesting as this has been, I'd rather figure out if there's actual demand before investing too much more time in something that might be obsolete before it launches.\n\nSpent yesterday and today building the website. Silver lining: now I'm legitimately posting these blogs in real time instead of just drafting them into the void.\n\nOnwards and upwards,\n\nCurtis"
+},
+{
+  "id": "2026-01-04-full-disclosure",
+  "date": "2026-01-04",
+  "title": "Full Disclosure",
+  "content": "I'm building an iOS app. So if this ever becomes a real thing, Android users are going to be out of luck. For now, anyway.\n\nGiven the uncertainty around whether this app will even be needed (see yesterday's post about the flat tax credit lobbying), I'm keeping scope narrow. iOS first. Validate demand. Then figure out the rest.\n\nIf it turns out people actually want this and the lobbying effort doesn't kill the need, well... I'll have to learn Android development. Or maybe someone out there who builds Android apps would like to do some charitable work? 😊\n\nBack to the todo list and another grocery store field test.\n\nTalk soon,\n\nCurtis"
+},
+{
+  "id": "2026-01-06-back-into-trenches",
+  "date": "2026-01-06",
+  "title": "Back into the trenches...",
+  "content": "Another round of testing at Costco, another list of todos. The scanning isn't working like I'd hoped—point, click, done turns out to be easier said than done. Trying to photograph shelf tags with an uncopoerative App while dodging tanker-truck-sized shopping carts coming at you from all directions... well, let's just say field testing is humbling.\n\nThe good news: everything else works. Manual entry, reports, data management—solid. It's just the scanning that needs more work. The field is narrowing.\n\nGuess we'll see.\n\nCurtis"
+},
+{
+  "id": "2026-01-09-back-to-drawing-board",
+  "date": "2026-01-09",
+  "title": "Well... this is humbling.",
+  "content": "Spent time reworking the scanning logic. Tested it thoroughly. Felt good about it. Then went to Sobeys.\n\nComplete failure. The price tags look different. The receipts format differently. What worked at Costco doesn't work anywhere else. Should've seen that coming.\n\nBack to the drawing board. The app can't rely on scanning if it only works at one store—that defeats the whole purpose. So I'm looking at options. There are always options.\n\nI'll be back.\n\nCurtis"
 }
 ]
 
