@@ -1,1 +1,15 @@
-[]
+[
+  {
+  "id": "2024-12-24-why-this-matters",
+  "date": "2024-12-24",
+  "title": "Why This Matters",
+  "content": "So… I feel it might be important to document this journey. Not sure why. I will probably end up scrapping the idea soon enough, but for now, I'll give it a go.\n\nRecently, someone near and dear to me was diagnosed with celiac disease. We'd known for some time and had been preparing for it—symptoms were clear, testing was underway—but the formal diagnosis has now arrived. It means permanent dietary changes, constant vigilance, and, as we have discovered, significantly higher grocery bills.\n\nGluten-free products cost more. Sometimes double, sometimes triple the price of regular items. And the Canada Revenue Agency allows you to claim that difference as a medical expense. Sounds helpful, right? Except the process is a nightmare. You have to track every purchase, compare prices, keep receipts, calculate differentials, and compile everything for tax filing. We're talking hundreds of transactions per year—spreadsheets, receipts, and all that crap—plus the ever-looming threat of an audit.\n\nI looked for an app to handle this. Nothing exists. Nothing practical, anyway. There are receipt scanners, sure, but nothing purpose-built for celiac tax claims in Canada. So I decided to build one.\n\nI'm learning to program as a retirement hobby (seriously), and I've recently started working with Claude.ai to build things like apps and websites. This feels important enough to figure out. If I can make it work, I'll release it for free. No ads. No subscriptions. Just a tool to help people manage something that's already hard enough.\n\nLet's see how this goes.\n\nCurtis"
+},
+{
+  "id": "2024-12-27-and-away-we-go",
+  "date": "2024-12-27",
+  "title": "And Away We Go",
+  "content": "I've been plodding along with AI this past year, taking a somewhat pragmatic approach to coding so I could at least try to learn something. This time though, I'm throwing that out the window. Full acceleration mode. The emphasis is on getting this thing built—sooner rather than later—because a new tax year is about to start.\n\nIt's all about \"prompting\" apparently. At least that's what everyone keeps going on about when working with AI. For this exercise though, I went old-school Project Management: built a full Technical Specification for the app and a detailed Execution Plan to create it.\n\nBy end of day, I had a working prototype. Manual entry, camera integration, OCR for pulling data off product labels—the foundations are in place.\n\nSo far, so good.\n\nCurtis"
+}
+]
+
