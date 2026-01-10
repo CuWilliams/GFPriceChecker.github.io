@@ -21,31 +21,31 @@
   "id": "2025-12-29-large-day",
   "date": "2025-12-29",
   "title": "Large Day",
-  "content": "Finished the app today. Well, \"finished\" in the sense that it does everything I originally planned: tracks products, scans receipts, generates tax reports, exports to PDF and CSV. The whole thing. A few days ago this was just an idea, and now it's... real? Functional? Ready to test?\n\nI even made a logo for it. GF PriceChecker now has an actual identity instead of placeholder icons everywhere. Small thing, but it makes it feel less like a prototype and more like something people might actually use.\n\nTomorrow I'm taking this thing to Costco for field trials. I have historically avoided that place like the plague. Now I'm excited about it. Coding does strange things to your brain.\n\nTalk soon,\n\nCurtis"
+  "content": "Finished the app today. Well, \"finished\" in the sense that it does everything I originally planned: tracks products, scans receipts, generates tax reports, exports to PDF and CSV. The whole thing. A few days ago this was just an idea, and now it's... real? Functional? Ready to test?\n\nI even made a logo for it. GF PriceChecker now has an actual identity instead of placeholder icons everywhere. Small thing, but it makes it feel less like a prototype and more like something people might actually use.\n\nTomorrow I'm taking this thing to Costco for field trials. I have historically avoided that place like the plague. Now I'm excited about it. Coding does strange things to your brain.\n\nTalk soon.\n\nCurtis"
 },
 {
   "id": "2025-12-31-field-trials-and-tribulations",
   "date": "2025-12-31",
   "title": "Field Trials... and Tribulations",
-  "content": "Took the app to Costco for its first real test. \"Interesting\" would be the diplomatic word. Generated an awfully long list of stuff to fix, enhance, change, omit—you name it. It's a good thing I'm retired.\n\nSpent yesterday and a bit of today (before the New Year's Eve dart tourney started) sorting through the todo list and knocking off what I could. The rest will have to wait for 2026.\n\nHappy New Year everyone.\n\nCurtis"
+  "content": "Took the app to Costco for its first real test. \"Interesting\" would be the diplomatic word. Generated an awfully long list of stuff to fix, enhance, change, omit—you name it. It's a good thing I'm retired.\n\nSpent yesterday and a bit of today (before the New Year's Eve dart tourney started) sorting through the to-do list and knocking off what I could. The rest will have to wait for 2026.\n\nHappy New Year everyone.\n\nCurtis"
 },
 {
   "id": "2026-01-03-back-at-it-kind-of",
   "date": "2026-01-03",
   "title": "Back at It. Kind of…",
-  "content": "New Year, time to get back to the app. But first—I need a website. If I'm going to reach out to celiac organizations and see if anyone actually wants this thing, I should probably look somewhat legitimate.\n\nPlus there's a wrinkle: the Canadian Celiac Association is currently lobbying for a flat tax credit, which if approved, would make this entire app redundant. So yeah, as interesting as this has been, I'd rather figure out if there's actual demand before investing too much more time in something that might be obsolete before it launches.\n\nSpent yesterday and today building the website. Silver lining: now I'm legitimately posting these blogs in real time instead of just drafting them into the void.\n\nOnwards and upwards,\n\nCurtis"
+  "content": "New Year, time to get back to the app. But first—I need a website. If I'm going to reach out to celiac organizations and see if anyone actually wants this thing, I should probably look somewhat legitimate.\n\nPlus there's a wrinkle: the Canadian Celiac Association is currently lobbying for a flat tax credit, which if approved, would make this entire app redundant. So yeah, as interesting as this has been, I'd rather figure out if there's actual demand before investing too much more time in something that might be obsolete before it launches.\n\nSpent yesterday and today building the website. Silver lining: now I'm legitimately posting these blogs in real time instead of just drafting them into the void.\n\nOnwards and upwards.\n\nCurtis"
 },
 {
   "id": "2026-01-04-full-disclosure",
   "date": "2026-01-04",
   "title": "Full Disclosure",
-  "content": "I'm building an iOS app. So if this ever becomes a real thing, Android users are going to be out of luck. For now, anyway.\n\nGiven the uncertainty around whether this app will even be needed (see yesterday's post about the flat tax credit lobbying), I'm keeping scope narrow. iOS first. Validate demand. Then figure out the rest.\n\nIf it turns out people actually want this and the lobbying effort doesn't kill the need, well... I'll have to learn Android development. Or maybe someone out there who builds Android apps would like to do some charitable work? 😊\n\nBack to the todo list and another grocery store field test.\n\nTalk soon,\n\nCurtis"
+  "content": "I'm building an iOS app. So if this ever becomes a real thing, Android users are going to be out of luck. For now, anyway.\n\nGiven the uncertainty around whether this app will even be needed (see yesterday's post about the flat tax credit lobbying), I'm keeping scope narrow. iOS first. Validate demand. Then figure out the rest.\n\nIf it turns out people actually want this and the lobbying effort doesn't kill the need, well... I'll have to learn Android development. Or maybe someone out there who builds Android apps would like to do some charitable work? 😊\n\nBack to the to-do list and another grocery store field test.\n\nTalk soon.\n\nCurtis"
 },
 {
   "id": "2026-01-06-back-into-trenches",
   "date": "2026-01-06",
   "title": "Back into the trenches...",
-  "content": "Another round of testing at Costco, another list of todos. The scanning isn't working like I'd hoped—point, click, done turns out to be easier said than done. Trying to photograph shelf tags with an uncopoerative App while dodging tanker-truck-sized shopping carts coming at you from all directions... well, let's just say field testing is humbling.\n\nThe good news: everything else works. Manual entry, reports, data management—solid. It's just the scanning that needs more work. The field is narrowing.\n\nGuess we'll see.\n\nCurtis"
+  "content": "Another round of testing at Costco, another list of to-dos. The scanning isn't working like I'd hoped—point, click, done turns out to be easier said than done. Trying to photograph shelf tags with an uncopoerative App while dodging tanker-truck-sized shopping carts coming at you from all directions... well, let's just say field testing is humbling.\n\nThe good news: everything else works. Manual entry, reports, data management—solid. It's just the scanning that needs more work. The field is narrowing.\n\nGuess we'll see.\n\nCurtis"
 },
 {
   "id": "2026-01-09-back-to-drawing-board",
