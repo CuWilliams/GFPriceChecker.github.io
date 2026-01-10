@@ -57,6 +57,57 @@
   }
 
   /**
+   * Load and render latest blog post on home page
+   */
+  async function loadLatestBlogPost() {
+    const container = document.getElementById('latest-blog-post');
+    if (!container) return;
+
+    const data = await fetchJSON('/data/blog.json');
+
+    if (!data || !Array.isArray(data) || data.length === 0) {
+      // Show empty state
+      container.innerHTML = `
+        <div class="card text-center">
+          <div class="card-title">No Blog Posts Yet</div>
+          <p class="card-text">Check back soon for development updates and insights.</p>
+        </div>
+      `;
+      return;
+    }
+
+    // Sort posts by date and get the most recent
+    const sortedPosts = [...data].sort((a, b) => {
+      return new Date(b.date) - new Date(a.date);
+    });
+    const latest = sortedPosts[0];
+
+    // Format date
+    const date = new Date(latest.date);
+    const formattedDate = date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    // Get first 150 characters of content
+    const preview = latest.content.substring(0, 150);
+    const needsEllipsis = latest.content.length > 150;
+
+    // Render blog post card
+    container.innerHTML = `
+      <article class="card">
+        <h3 class="card-title">${escapeHtml(latest.title)}</h3>
+        <div class="badge badge-primary mb-md">${formattedDate}</div>
+        <p class="card-text">${escapeHtml(preview)}${needsEllipsis ? '...' : ''}</p>
+        <div class="card-footer">
+          <a href="/blog.html#post-${escapeHtml(latest.id)}" class="button button-secondary">Read More</a>
+        </div>
+      </article>
+    `;
+  }
+
+  /**
    * Load and render latest announcement on home page
    */
   async function loadLatestAnnouncement() {
@@ -226,6 +277,7 @@
     const path = window.location.pathname;
 
     if (path === '/' || path === '/index.html') {
+      loadLatestBlogPost();
       loadLatestAnnouncement();
     } else if (path === '/announcements.html') {
       loadAnnouncementsList();
