@@ -49,11 +49,18 @@
     container.setAttribute('aria-live', 'polite');
 
     // Render content
-    if (data.link) {
-      container.innerHTML = `<strong><a href="${escapeHtml(data.link)}" style="color: inherit; text-decoration: underline;">${escapeHtml(data.message)}</a></strong>`;
-    } else {
-      container.innerHTML = `<strong>${escapeHtml(data.message)}</strong>`;
+    let html = `<strong>${escapeHtml(data.message)}</strong>`;
+
+    if (data.contacts && Array.isArray(data.contacts) && data.contacts.length > 0) {
+      const contactLinks = data.contacts.map(contact =>
+        `<a href="${escapeHtml(contact.url)}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">${escapeHtml(contact.label)}</a>`
+      ).join(' | ');
+      html += `<br><strong>${contactLinks}</strong>`;
+    } else if (data.link) {
+      html = `<strong><a href="${escapeHtml(data.link)}" style="color: inherit; text-decoration: underline;">${escapeHtml(data.message)}</a></strong>`;
     }
+
+    container.innerHTML = html;
   }
 
   /**
