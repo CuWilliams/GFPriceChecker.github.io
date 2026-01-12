@@ -32,13 +32,13 @@
 {
   "id": "2026-01-03-back-at-it-kind-of",
   "date": "2026-01-03",
-  "title": "Back at It. Kind of…",
+  "title": "Back at It. Kind of...",
   "content": "New Year, time to get back to the app. But first—I need a website. If I'm going to reach out to celiac organizations and see if anyone actually wants this thing, I should probably look somewhat legitimate.\n\nPlus there's a wrinkle: the Canadian Celiac Association is currently lobbying for a flat tax credit, which if approved, would make this entire app redundant. So yeah, as interesting as this has been, I'd rather figure out if there's actual demand before investing too much more time in something that might be obsolete before it launches.\n\nSpent yesterday and today building the website. Silver lining: now I'm legitimately posting these blogs in real time instead of just drafting them into the void.\n\nOnwards and upwards.\n\nCurtis"
 },
 {
   "id": "2026-01-04-full-disclosure",
   "date": "2026-01-04",
-  "title": "Full Disclosure",
+  "title": "Full Disclosure.",
   "content": "I'm building an iOS app. So if this ever becomes a real thing, Android users are going to be out of luck. For now, anyway.\n\nGiven the uncertainty around whether this app will even be needed (see yesterday's post about the flat tax credit lobbying), I'm keeping scope narrow. iOS first. Validate demand. Then figure out the rest.\n\nIf it turns out people actually want this and the lobbying effort doesn't kill the need, well... I'll have to learn Android development. Or maybe someone out there who builds Android apps would like to do some charitable work? 😊\n\nBack to the to-do list and another grocery store field test.\n\nTalk soon.\n\nCurtis"
 },
 {
@@ -52,6 +52,12 @@
   "date": "2026-01-09",
   "title": "Well... this is humbling.",
   "content": "Spent time reworking the scanning logic. Tested it thoroughly. Felt good about it. Then went to Sobeys.\n\nComplete failure. The price tags look different. The receipts format differently. What worked at Costco doesn't work anywhere else. Should've seen that coming.\n\nBack to the drawing board. The app can't rely on scanning if it only works at one store—that defeats the whole purpose. So I'm looking at options. There are always options.\n\nI'll be back.\n\nCurtis"
+},
+{
+  "id": "2026-01-11-big-code-change",
+  "date": "2026-01-11",
+  "title": "Big code change day...",
+  "content": "The scanning approach was fundamentally broken. It assumed all stores format their price tags and receipts the same way. They don't. Not even close.\n\nSo... options. I could limit the app to one store (obviously a non-starter), connect to some AI service (costs money, kills the \"free forever\" goal), or add a couple manual steps to confirm what the scanner sees.\n\nWent with option three. After scanning, you tap the product name and price to confirm. Less magical, but it works everywhere. And honestly? Still pretty good.\n\nBack to the store for more testing. Wish me luck.\n\nCurtis"
 }
 ]
 
