@@ -140,7 +140,6 @@ h5, h6 {
 
 p {
   margin-bottom: var(--space-md);
-  max-width: 65ch; /* Optimal line length for readability */
 }
 
 /* Links */
