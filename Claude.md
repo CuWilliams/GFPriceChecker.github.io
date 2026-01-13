@@ -41,13 +41,14 @@ This project follows **DESIGN-SYSTEM.md** guidelines:
 ```
 /
 ├── index.html                  # Home page
-├── features.html               # (Phase 3 - to be created)
-├── announcements.html          # (Phase 3 - to be created)
-├── faq.html                    # (Phase 3 - to be created)
-├── privacy.html                # (Phase 3 - to be created)
-├── terms.html                  # (Phase 3 - to be created)
-├── sitemap.xml                 # (Phase 3 - to be created)
-├── robots.txt                  # (Phase 3 - to be created)
+├── features.html               # Features page with carousel
+├── blog.html                   # Developer blog posts
+├── announcements.html          # News and updates page
+├── faq.html                    # Frequently asked questions
+├── privacy.html                # Privacy policy
+├── terms.html                  # Terms of use
+├── sitemap.xml                 # XML sitemap for SEO
+├── robots.txt                  # Search engine crawl rules
 ├── CNAME                       # GitHub Pages custom domain
 ├── README.md                   # GitHub repository description
 ├── Claude.md                   # This file - project documentation
@@ -60,16 +61,23 @@ This project follows **DESIGN-SYSTEM.md** guidelines:
 │   │   ├── base.css            # Design tokens, reset, utilities
 │   │   └── components.css      # Component library styles
 │   ├── js/
-│   │   └── main.js             # Mobile nav, component initialization
+│   │   ├── main.js             # Mobile nav, component initialization
+│   │   ├── components.js       # Component loader for navbar/footer
+│   │   ├── content-loader.js   # Dynamic content from JSON
+│   │   ├── blog-loader.js      # Blog post rendering
+│   │   └── carousel.js         # Screenshot carousel
 │   ├── images/
 │   │   ├── logos/              # Brand assets
 │   │   └── screenshots/        # App screenshots
 │   └── video/                  # Instructional videos
-├── data/                       # (Phase 2 - JSON data files)
+├── data/                       # JSON data files
 │   ├── status.json             # Status banner configuration
 │   ├── announcements.json      # News and updates
+│   ├── blog.json               # Developer blog posts
 │   └── faq.json                # Frequently asked questions
-└── components/                 # (Future - reusable HTML partials)
+└── components/                 # Reusable HTML components
+    ├── navbar.html             # Navigation bar
+    └── footer.html             # Footer
 ```
 
 ---
@@ -133,18 +141,84 @@ All components are defined in `/assets/css/components.css`:
 
 ## JavaScript Modules
 
+### `/assets/js/components.js` (Component Loader)
+
+**Purpose:** Dynamically loads reusable HTML components (navbar, footer) to eliminate duplication
+
+**Functions:**
+- `fetchComponent(url)`: Fetches HTML component files with error handling
+- `loadNavbar()`: Loads navbar.html into #navbar-placeholder
+- `loadFooter()`: Loads footer.html into #footer-placeholder
+- `init()`: Loads both components in parallel
+
+**How it works:**
+1. Fetches `/components/navbar.html` and `/components/footer.html`
+2. Injects HTML into placeholder divs
+3. Reinitializes mobile nav and sets active links after navbar loads
+4. Runs automatically on DOM ready
+
+**Benefits:**
+- Single source of truth for nav/footer (edit once, updates all 7 pages)
+- Reduces code duplication from ~60 lines per page to 1 line
+- Maintains static hosting compatibility (no build tools needed)
+
 ### `/assets/js/main.js`
 
 **Functions:**
-- `initMobileNav()`: Hamburger menu toggle with keyboard support
-- `initAccordions()`: FAQ accordion expand/collapse
-- `setActiveNavLink()`: Highlights current page in navigation
+- `initMobileNav()`: Hamburger menu toggle with keyboard support *(exposed globally)*
+- `initAccordions()`: FAQ accordion expand/collapse *(exposed globally)*
+- `setActiveNavLink()`: Highlights current page in navigation *(exposed globally)*
+
+**Global Exposure:**
+Functions are exposed to `window` object for reinitialization after dynamic component loading
 
 **Event Listeners:**
 - Click handlers for mobile menu toggle
 - Escape key to close mobile menu
 - Click outside to close mobile menu
 - Accordion button clicks
+
+### `/assets/js/content-loader.js`
+
+**Purpose:** Loads dynamic content from JSON data files
+
+**Functions:**
+- `loadStatusBanner()`: Updates status banner from status.json
+- `loadLatestBlogPost()`: Shows most recent blog post on homepage
+- `loadLatestAnnouncement()`: Shows most recent announcement on homepage
+- `loadAnnouncementsList()`: Renders all announcements
+- `loadFAQ()`: Renders FAQ accordion
+
+**Features:**
+- Error handling and empty state management
+- XSS protection via HTML escaping
+- Date formatting
+- ARIA live regions for dynamic updates
+
+### `/assets/js/blog-loader.js`
+
+**Purpose:** Loads and renders blog posts from blog.json
+
+**Functions:**
+- `loadBlogList()`: Fetches and renders all blog posts sorted by date
+- `formatDate()`: Formats ISO dates to human-readable format
+- `preserveLineBreaks()`: Preserves paragraph structure in blog content
+
+**Features:**
+- Sorts posts newest first
+- Preserves line breaks and paragraphs
+- Empty state handling
+
+### `/assets/js/carousel.js`
+
+**Purpose:** Interactive screenshot carousel for features page
+
+**Features:**
+- Mouse drag, touch swipe, keyboard navigation
+- Lazy loading (loads current + 2 adjacent slides)
+- Progress dots for navigation
+- Smooth scrolling with debouncing
+- Full ARIA accessibility support
 
 ---
 

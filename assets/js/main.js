@@ -75,8 +75,10 @@
     });
   }
 
-  // Expose initAccordions to global scope for dynamic content loading
+  // Expose functions to global scope for dynamic component loading
   window.initAccordions = initAccordions;
+  window.initMobileNav = initMobileNav;
+  window.setActiveNavLink = setActiveNavLink;
 
   /**
    * Set active navigation link based on current page

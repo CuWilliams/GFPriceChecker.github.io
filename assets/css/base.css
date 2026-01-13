@@ -280,6 +280,16 @@ select:focus-visible {
 .mb-xl { margin-bottom: var(--space-xl); }
 
 /* ========================================
+   COMPONENT PLACEHOLDERS
+   ======================================== */
+
+/* Component loading states - prevent layout shift */
+#navbar-placeholder,
+#footer-placeholder {
+  min-height: 64px;
+}
+
+/* ========================================
    DESIGN SYSTEM ENFORCEMENT
    ======================================== */
 
