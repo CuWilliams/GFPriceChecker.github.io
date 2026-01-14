@@ -22,13 +22,13 @@ jobs:
           secure: true
 
           # Authentication (uses repository secrets)
-          username: ${{ secrets.curtis.w5@icloud.com }}
-          password: ${{ secrets.qbku-frno-ieur-tida }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
 
           # Email details
           subject: "📝 Blog Post Reminder: PR #${{ github.event.pull_request.number }} merged"
           to: ${{ secrets.REMINDER_EMAIL }}
-          from: ${{ secrets.curtis.w5@icloud.com }}
+          from: ${{ secrets.SMTP_USERNAME }}
 
           # Email body with PR details
           body: |
