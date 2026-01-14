@@ -16,7 +16,7 @@ jobs:
       - name: Send email reminder
         uses: dawidd6/action-send-mail@v3
         with:
-          # SMTP server configuration (iCloud Mail)
+          # SMTP server configuration
           server_address: smtp.mail.me.com
           server_port: 587
           secure: true

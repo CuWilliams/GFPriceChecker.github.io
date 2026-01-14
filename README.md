@@ -75,7 +75,7 @@ This is a personal project with limited maintenance bandwidth.
 - **Pull Requests:** Welcome but may not be reviewed promptly
 - **Issues:** GitHub Issues disabled - contact via methods below instead
 
-If you want to build an Android version or contribute significant features, please reach out first.
+If you want to build an Android version or contribute significant features, please contact me.
 
 ## Contact
 
