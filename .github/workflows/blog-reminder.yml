@@ -1,0 +1,54 @@
+name: Blog Post Reminder
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  send-reminder:
+    # Only run if PR was actually merged (not just closed)
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send email reminder
+        uses: dawidd6/action-send-mail@v3
+        with:
+          # SMTP server configuration
+          server_address: smtp.gmail.com
+          server_port: 587
+          secure: true
+
+          # Authentication (uses repository secrets)
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+
+          # Email details
+          subject: "📝 Blog Post Reminder: PR #${{ github.event.pull_request.number }} merged"
+          to: ${{ secrets.REMINDER_EMAIL }}
+          from: ${{ secrets.SMTP_USERNAME }}
+
+          # Email body with PR details
+          body: |
+            Hi Curtis,
+
+            A pull request has been merged to the GF PriceChecker website!
+
+            PR Details:
+            - Title: ${{ github.event.pull_request.title }}
+            - Number: #${{ github.event.pull_request.number }}
+            - Merged by: ${{ github.event.pull_request.merged_by.login }}
+            - Merged at: ${{ github.event.pull_request.merged_at }}
+            - URL: ${{ github.event.pull_request.html_url }}
+
+            Consider writing a blog post about this update!
+
+            To add a new blog post:
+            1. Edit data/blog.json
+            2. Add your post with title, date, and content
+            3. Commit and push to update the website
+
+            ---
+            This is an automated reminder from GitHub Actions.
