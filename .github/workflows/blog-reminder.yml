@@ -16,10 +16,10 @@ jobs:
       - name: Send email reminder
         uses: dawidd6/action-send-mail@v3
         with:
-          # SMTP server configuration
+          # SMTP server configuration (iCloud Mail)
           server_address: smtp.mail.me.com
           server_port: 587
-          secure: true
+          connection_security: STARTTLS
 
           # Authentication (uses repository secrets)
           username: ${{ secrets.SMTP_USERNAME }}
