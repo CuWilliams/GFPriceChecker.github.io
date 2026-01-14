@@ -17,18 +17,18 @@ jobs:
         uses: dawidd6/action-send-mail@v3
         with:
           # SMTP server configuration
-          server_address: smtp.gmail.com
+          server_address: smtp.mail.me.com
           server_port: 587
           secure: true
 
           # Authentication (uses repository secrets)
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
+          username: ${{ secrets.curtis.w5@icloud.com }}
+          password: ${{ secrets.qbku-frno-ieur-tida }}
 
           # Email details
           subject: "📝 Blog Post Reminder: PR #${{ github.event.pull_request.number }} merged"
           to: ${{ secrets.REMINDER_EMAIL }}
-          from: ${{ secrets.SMTP_USERNAME }}
+          from: ${{ secrets.curtis.w5@icloud.com }}
 
           # Email body with PR details
           body: |
