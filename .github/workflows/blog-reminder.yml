@@ -19,7 +19,8 @@ jobs:
           # SMTP server configuration (iCloud Mail)
           server_address: smtp.mail.me.com
           server_port: 587
-          secure: true
+          # Use STARTTLS for port 587 (not immediate SSL)
+          starttls: true
 
           # Authentication (uses repository secrets)
           username: ${{ secrets.SMTP_USERNAME }}
