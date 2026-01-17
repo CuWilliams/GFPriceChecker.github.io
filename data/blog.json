@@ -64,6 +64,12 @@
   "date": "2026-01-16",
   "title": "Scanner Redux",
   "content": "Spent today reworking how the scanner reads product labels. Went to the grocery store, tested it, came back with a list of problems. Fixed those. Went back. Tested again. Better.\n\nBy the third round, it was actually working. Scanned several product pairs without hiccups—smooth enough that I'm thinking about recording a video demo for the website. You know, once people actually discover this site exists.\n\nWhich means I now need to learn video editing. Another rabbit hole.\n\nChat soon,\n\nCurtis"
+},
+{
+  "id": "2026-01-17-demo-video-live",
+  "date": "2026-01-17",
+  "title": "Demo Video Live",
+  "content": "Managed to cobble together a demo video showing how the product price scanner works. It's up on the website now. Not the best cinematography you're gonna see, but hopefully enough to give people an idea of what this thing actually does.\n\nSpent time at the grocery store today collecting footage for the other features. Got so excited about everything actually working that I forgot my receipt at checkout. Of course. So the receipt verification video will have to wait for the next run.\n\nCheers,\n\nCurtis"
 }
 ]
 
