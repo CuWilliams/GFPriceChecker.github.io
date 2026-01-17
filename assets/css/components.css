@@ -77,6 +77,7 @@
 
 .navbar-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding-top: var(--space-md);
@@ -173,6 +174,8 @@
   flex-direction: column;
   gap: var(--space-xs);
   padding: var(--space-md) 0;
+  width: 100%;
+  order: 3;
 }
 
 .navbar-menu.is-active {
@@ -308,6 +311,7 @@
 .status-banner {
   padding: var(--space-md) var(--space-lg);
   border-radius: var(--border-radius);
+  margin-top: var(--space-lg);
   margin-bottom: var(--space-lg);
   font-weight: var(--font-semibold);
   text-align: center;
@@ -458,6 +462,10 @@
   justify-content: center;
   padding: var(--space-3xl) var(--space-lg);
   text-align: center;
+}
+
+.section .empty-state:last-child {
+  padding-bottom: 0;
 }
 
 .empty-state-icon {
