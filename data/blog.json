@@ -58,6 +58,12 @@
   "date": "2026-01-11",
   "title": "Big code change day...",
   "content": "The scanning approach was fundamentally broken. It assumed all stores format their price tags and receipts the same way. They don't. Not even close.\n\nSo... options. I could limit the app to one store (obviously a non-starter), connect to some AI service (costs money, kills the \"free forever\" goal), or add a couple manual steps to confirm what the scanner sees.\n\nWent with option three. After scanning, you tap the product name and price to confirm. Less magical, but it works everywhere. And honestly? Still pretty good.\n\nBack to the store for more testing. Wish me luck.\n\nCurtis"
+},
+{
+  "id": "2026-01-16-scanner-redux",
+  "date": "2026-01-16",
+  "title": "Scanner Redux",
+  "content": "Spent today reworking how the scanner reads product labels. Went to the grocery store, tested it, came back with a list of problems. Fixed those. Went back. Tested again. Better.\n\nBy the third round, it was actually working. Scanned several product pairs without hiccups—smooth enough that I'm thinking about recording a video demo for the website. You know, once people actually discover this site exists.\n\nWhich means I now need to learn video editing. Another rabbit hole.\n\nChat soon,\n\nCurtis"
 }
 ]
 
