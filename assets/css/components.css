@@ -733,6 +733,17 @@
   .video-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* 3-video layout: center the last item */
+  .video-grid-three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .video-grid-three .video-item:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    justify-self: center;
+  }
 }
 
 .video-item {
