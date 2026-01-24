@@ -1,29 +1,14 @@
 /**
  * GF PriceChecker - Content Loader
  * Fetches and renders dynamic content from JSON data files
+ * Requires: utils.js (must be loaded first)
  */
 
 (function() {
   'use strict';
 
-  /**
-   * Fetch JSON data with error handling
-   * @param {string} url - URL of the JSON file
-   * @returns {Promise<Object|null>} Parsed JSON data or null on error
-   */
-  async function fetchJSON(url) {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        console.warn(`Failed to fetch ${url}: ${response.status}`);
-        return null;
-      }
-      return await response.json();
-    } catch (error) {
-      console.warn(`Error fetching ${url}:`, error);
-      return null;
-    }
-  }
+  // Shorthand references to utility functions
+  const { fetchJSON, escapeHtml, formatDate } = window.GFUtils;
 
   /**
    * Load and render status banner
@@ -89,14 +74,6 @@
     });
     const latest = sortedPosts[0];
 
-    // Format date
-    const date = new Date(latest.date);
-    const formattedDate = date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-
     // Get first 150 characters of content
     const preview = latest.content.substring(0, 150);
     const needsEllipsis = latest.content.length > 150;
@@ -105,7 +82,7 @@
     container.innerHTML = `
       <article class="card">
         <h3 class="card-title">${escapeHtml(latest.title)}</h3>
-        <div class="badge badge-primary mb-md">${formattedDate}</div>
+        <div class="badge badge-primary mb-md">${formatDate(latest.date)}</div>
         <p class="card-text">${escapeHtml(preview)}${needsEllipsis ? '...' : ''}</p>
         <div class="card-footer">
           <a href="/blog.html#post-${escapeHtml(latest.id)}" class="button button-secondary">Read More</a>
@@ -137,19 +114,11 @@
     // Get the most recent announcement (first in array)
     const latest = data[0];
 
-    // Format date
-    const date = new Date(latest.date);
-    const formattedDate = date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-
     // Render announcement card
     container.innerHTML = `
       <article class="card">
         <div class="card-title">${escapeHtml(latest.title)}</div>
-        <div class="badge badge-primary mb-md">${formattedDate}</div>
+        <div class="badge badge-primary mb-md">${formatDate(latest.date)}</div>
         <p class="card-text">${escapeHtml(latest.content)}</p>
         <div class="card-footer">
           <a href="/announcements.html" class="button button-secondary">View All Announcements</a>
@@ -185,17 +154,10 @@
 
     // Render all announcements
     const html = data.map(announcement => {
-      const date = new Date(announcement.date);
-      const formattedDate = date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-
       return `
         <article class="card mb-lg">
           <div class="card-title">${escapeHtml(announcement.title)}</div>
-          <div class="badge badge-primary mb-md">${formattedDate}</div>
+          <div class="badge badge-primary mb-md">${formatDate(announcement.date)}</div>
           <p class="card-text">${escapeHtml(announcement.content)}</p>
         </article>
       `;
@@ -259,18 +221,6 @@
     if (window.initAccordions) {
       window.initAccordions();
     }
-  }
-
-  /**
-   * Escape HTML to prevent XSS
-   * @param {string} str - String to escape
-   * @returns {string} Escaped string
-   */
-  function escapeHtml(str) {
-    if (!str) return '';
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
   }
 
   /**

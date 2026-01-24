@@ -1,55 +1,14 @@
 /**
  * GF PriceChecker - Blog Loader
  * Fetches and renders blog posts from JSON data
+ * Requires: utils.js (must be loaded first)
  */
 
 (function() {
   'use strict';
 
-  /**
-   * Fetch JSON data with error handling
-   * @param {string} url - URL of the JSON file
-   * @returns {Promise<Object|null>} Parsed JSON data or null on error
-   */
-  async function fetchJSON(url) {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        console.warn(`Failed to fetch ${url}: ${response.status}`);
-        return null;
-      }
-      return await response.json();
-    } catch (error) {
-      console.warn(`Error fetching ${url}:`, error);
-      return null;
-    }
-  }
-
-  /**
-   * Format date as "Month Day, Year"
-   * @param {string} dateString - ISO date string (YYYY-MM-DD)
-   * @returns {string} Formatted date
-   */
-  function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  }
-
-  /**
-   * Escape HTML to prevent XSS
-   * @param {string} str - String to escape
-   * @returns {string} Escaped string
-   */
-  function escapeHtml(str) {
-    if (!str) return '';
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-  }
+  // Shorthand references to utility functions
+  const { fetchJSON, escapeHtml, formatDate } = window.GFUtils;
 
   /**
    * Preserve line breaks in content
@@ -106,13 +65,12 @@
 
     // Render all blog posts
     const html = sortedPosts.map(post => {
-      const formattedDate = formatDate(post.date);
       const contentHtml = preserveLineBreaks(post.content);
 
       return `
         <article class="card mb-lg" id="post-${escapeHtml(post.id)}">
           <h2 class="card-title">${escapeHtml(post.title)}</h2>
-          <div class="badge badge-primary mb-md">${formattedDate}</div>
+          <div class="badge badge-primary mb-md">${formatDate(post.date)}</div>
           ${contentHtml}
         </article>
       `;
