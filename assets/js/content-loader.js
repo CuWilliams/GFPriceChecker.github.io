@@ -36,6 +36,9 @@
         `<a href="${escapeHtml(contact.url)}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">${escapeHtml(contact.label)}</a>`
       ).join(' | ');
       html += `<br><strong>${contactLinks}</strong>`;
+    } else if (data.link && data.linkText) {
+      // Separate linked text from main message
+      html = `<strong>${escapeHtml(data.message)} <a href="${escapeHtml(data.link)}" style="color: inherit; text-decoration: underline;">${escapeHtml(data.linkText)}</a></strong>`;
     } else if (data.link) {
       html = `<strong><a href="${escapeHtml(data.link)}" style="color: inherit; text-decoration: underline;">${escapeHtml(data.message)}</a></strong>`;
     }

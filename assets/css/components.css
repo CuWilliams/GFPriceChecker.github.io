@@ -765,3 +765,95 @@
   line-height: var(--line-height-relaxed);
   margin: 0;
 }
+
+/* ========================================
+   BETA PAGE LISTS
+   ======================================== */
+
+.beta-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step-counter;
+}
+
+.beta-steps li {
+  counter-increment: step-counter;
+  margin-bottom: var(--space-xl);
+  padding-left: var(--space-2xl);
+  position: relative;
+}
+
+.beta-steps li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beta-steps li strong {
+  display: block;
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xs);
+  color: var(--black);
+}
+
+.beta-steps li p {
+  margin: 0;
+  color: var(--dark-gray);
+  line-height: var(--line-height-relaxed);
+}
+
+.beta-steps li a {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+.beta-steps li a:hover {
+  text-decoration: none;
+}
+
+.beta-focus-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-lg) 0;
+}
+
+.beta-focus-list li {
+  padding: var(--space-md) 0;
+  padding-left: var(--space-lg);
+  border-bottom: 1px solid var(--light-gray);
+  position: relative;
+  color: var(--dark-gray);
+  line-height: var(--line-height-relaxed);
+}
+
+.beta-focus-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-blue);
+  border-radius: 50%;
+}
+
+.beta-focus-list li:last-child {
+  border-bottom: none;
+}
+
+.beta-focus-list li strong {
+  color: var(--black);
+}

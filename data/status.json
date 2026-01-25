@@ -1,9 +1,6 @@
 {
-  "state": "coming-soon",
-  "message": "GF PriceChecker is under development. If you wish to contact the Developer, please message Curtis via the following means:",
-  "contacts": [
-    {"label": "Twitter/X", "url": "https://twitter.com/CurtisWill3z"},
-    {"label": "LinkedIn", "url": "https://www.linkedin.com/in/curtis-williams-154382b3"}
-  ],
-  "link": null
+  "state": "testflight",
+  "message": "Beta testing starting soon.",
+  "linkText": "Public link coming in 1-2 days.",
+  "link": "/beta.html"
 }
