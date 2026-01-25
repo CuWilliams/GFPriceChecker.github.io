@@ -82,6 +82,11 @@
   "date": "2026-01-24",
   "title": "Ready to take it to the next level",
   "content": "The latest instructional video is up on the site—reporting and exporting. This one shows what the whole thing is actually for: giving people a clean, CRA-ready document for their medical tax claim. All the price differentials, receipts, the works.\n\nI reached out to Celiac Canada hoping for some feedback. Nothing yet. But I'm pressing forward anyway. At minimum, there's one person in this country who's definitely going to use this app: me. I do the taxes in this household, so yeah—I've got a vested interest.\n\nTime to get this on the App Store. Beta first, obviously. Might regret it. We'll see.\n\nCurtis"
+},
+{
+  "date": "2026-01-25",
+  "title": "Beta Launch: Almost There",
+  "content": "So... the app's ready for beta. That's the version where people who don't mind the occasional rough edge get to try it before everyone else and tell me what's broken.\n\nIt's a necessary step. Theory meets practice and all that.\n\nApple's reviewing the TestFlight build now—should be approved in a day or two. Once that happens, I'll post a public link here along with instructions for getting it installed. The process involves downloading TestFlight (Apple's beta testing app), then using the link to grab GFPriceChecker.\n\nIf you've been following along and want to help test, you'll be able to jump in soon. If you'd rather wait for the polished version, no worries—that's coming after we work through whatever the beta testers find.\n\nOne step closer.\n\nCurtis"
 }
 ]
 
