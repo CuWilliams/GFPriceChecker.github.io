@@ -62,7 +62,9 @@
     accordionButtons.forEach(button => {
       button.addEventListener('click', function() {
         const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        const content = button.nextElementSibling;
+        // Use aria-controls to find the content element by ID
+        const contentId = button.getAttribute('aria-controls');
+        const content = contentId ? document.getElementById(contentId) : null;
 
         // Toggle aria-expanded
         button.setAttribute('aria-expanded', !isExpanded);

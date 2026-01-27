@@ -95,7 +95,8 @@
       return;
     }
 
-    const latest = data[0];
+    const sortedAnnouncements = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+    const latest = sortedAnnouncements[0];
     container.innerHTML = renderCard({
       title: latest.title,
       date: latest.date,
@@ -122,7 +123,9 @@
       return;
     }
 
-    container.innerHTML = data.map(announcement => renderCard({
+    const sortedAnnouncements = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    container.innerHTML = sortedAnnouncements.map(announcement => renderCard({
       title: announcement.title,
       date: announcement.date,
       content: announcement.content,

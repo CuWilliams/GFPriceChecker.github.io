@@ -87,6 +87,11 @@
   "date": "2026-01-25",
   "title": "Beta Launch: Almost There",
   "content": "So... the app's ready for beta. That's the version where people who don't mind the occasional rough edge get to try it before everyone else and tell me what's broken.\n\nIt's a necessary step. Theory meets practice and all that.\n\nApple's reviewing the TestFlight build now—should be approved in a day or two. Once that happens, I'll post a public link here along with instructions for getting it installed. The process involves downloading TestFlight (Apple's beta testing app), then using the link to grab GFPriceChecker.\n\nIf you've been following along and want to help test, you'll be able to jump in soon. If you'd rather wait for the polished version, no worries—that's coming after we work through whatever the beta testers find.\n\nOne step closer.\n\nCurtis"
+},
+{
+  "date": "2026-01-27",
+  "title": "It's Out There (Sort Of)",
+  "content": "The beta's approved. If you want to try it, the link's on the beta page. Fair warning: the TestFlight installation process isn't exactly intuitive if you've never done it before.\n\nAnd once you get past that hurdle, the app itself is... functional. That's the honest assessment. It does what it's supposed to do—track price differentials, scan receipts, generate reports—but the polish isn't there yet. Some workflows aren't obvious. Some screens could be clearer.\n\nWhich is exactly why beta testing exists.\n\nIf you're jumping in, spend some time with it. Check the Features page on this site for an overview of what the app's supposed to do. Then use TestFlight's feedback tools to tell me what's confusing, what's broken, or what could be better. The good feedback is helpful. The critical feedback is more helpful.\n\nI can take it. Probably.\n\nCurtis"
 }
 ]
 

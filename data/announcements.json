@@ -4,5 +4,11 @@
     "date": "2026-01-02",
     "title": "Website Launch",
     "content": "Welcome to the official GF PriceChecker website! We're building an iOS app to help Canadians track gluten-free product price differentials for tax deductions. Stay tuned for updates on our development progress."
-  }
+  },
+  {
+    "id": "2",
+    "date": "2026-01-27",
+  "title": "Public Beta Now Available",
+  "content": "GFPriceChecker has reached an important milestone: the public beta is now live on TestFlight.\n\nThe app provides tools for product comparison, receipt verification, and CRA-compliant report generation—all while maintaining complete data privacy through local-only storage.\n\nBeta testing is a critical phase where real-world usage reveals opportunities for improvement that isolated development cannot uncover. Your participation helps ensure the app meets the practical needs of the celiac community.\n\nTo join the beta program, visit our [Beta Testing page](/beta.html) for complete instructions and access to the TestFlight link.\n\nWe welcome your feedback. TestFlight includes built-in feedback tools that allow you to report issues, suggest improvements, or share observations directly with the development team. Your input during this phase will directly shape the final release.\n\nThank you for your interest in GFPriceChecker and your willingness to contribute to a tool designed for our community."
+}
 ]
