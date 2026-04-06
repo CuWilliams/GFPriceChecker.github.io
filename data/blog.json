@@ -92,6 +92,11 @@
   "date": "2026-01-27",
   "title": "It's Out There (Sort Of)",
   "content": "The beta's approved. If you want to try it, the link's on the beta page. Fair warning: the TestFlight installation process isn't exactly intuitive if you've never done it before.\n\nAnd once you get past that hurdle, the app itself is... functional. That's the honest assessment. It does what it's supposed to do—track price differentials, scan receipts, generate reports—but the polish isn't there yet. Some workflows aren't obvious. Some screens could be clearer.\n\nWhich is exactly why beta testing exists.\n\nIf you're jumping in, spend some time with it. Check the Features page on this site for an overview of what the app's supposed to do. Then use TestFlight's feedback tools to tell me what's confusing, what's broken, or what could be better. The good feedback is helpful. The critical feedback is more helpful.\n\nI can take it. Probably.\n\nCurtis"
+},
+{
+  "date": "2026-04-06",
+  "title": "Still At It",
+  "content": "Two months in, and my wife has used the app over 60 times without a single crash. That's the headline, and I'll take it.\n\nThe OCR still has some quirks depending on the store—price capture isn't consistent everywhere, so layout recognition needs more work. That's on the list. But the bigger realization from two months of real use is this: package-to-package price comparison isn't enough. GF products don't just cost more—they often contain significantly less. So we're moving to unit pricing. Weight capture will become mandatory on every price entry. It's a more honest comparison, and honestly, it's a more useful one. When you're living with celiac disease, the cost adds up faster than most people realize. Every cent of that CRA deduction matters.\n\nAlso fixing the receipt verification scroll view—it's too small right now and makes finding your product in the OCR text more painful than it needs to be. That update should be out tomorrow.\n\nMore to come.\n\nCurtis"
 }
 ]
 
