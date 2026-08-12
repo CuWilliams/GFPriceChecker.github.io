@@ -1,3 +1,9 @@
+> **Archived — historical record.** This is the phase-by-phase plan used to build the site in
+> January 2026. All six phases were completed and the site has changed considerably since. It is
+> kept as a record of how the site was originally constructed; it does not describe the site as it
+> stands today. For current documentation see [README.md](../../README.md) and
+> [Claude.md](../../Claude.md).
+
 # GF PriceChecker Website - Execution Plan
 
 **Version:** 1.0  

@@ -42,6 +42,7 @@ This project follows **DESIGN-SYSTEM.md** guidelines:
 /
 ├── index.html                  # Home page
 ├── features.html               # Features page with carousel
+├── beta.html                   # TestFlight beta instructions
 ├── blog.html                   # Developer blog posts
 ├── announcements.html          # News and updates page
 ├── faq.html                    # Frequently asked questions
@@ -50,17 +51,20 @@ This project follows **DESIGN-SYSTEM.md** guidelines:
 ├── sitemap.xml                 # XML sitemap for SEO
 ├── robots.txt                  # Search engine crawl rules
 ├── CNAME                       # GitHub Pages custom domain
-├── README.md                   # GitHub repository description
+├── README.md                   # How the site is built, run, and added to
+├── CHANGELOG.md                # Site release history and versioning approach
 ├── Claude.md                   # This file - project documentation
 ├── DESIGN-SYSTEM.md            # Design guidelines and tokens
 ├── Documents/
-│   ├── EXECUTION_PLAN.md       # Phased implementation plan
-│   └── TECHNICAL_REQUIREMENTS.md # Technical specifications
+│   └── archive/                # Original build plans (historical)
+│       ├── EXECUTION_PLAN.md
+│       └── TECHNICAL_REQUIREMENTS.md
 ├── assets/
 │   ├── css/
 │   │   ├── base.css            # Design tokens, reset, utilities
 │   │   └── components.css      # Component library styles
 │   ├── js/
+│   │   ├── utils.js            # Shared helpers (window.GFUtils) - load first
 │   │   ├── main.js             # Mobile nav, component initialization
 │   │   ├── components.js       # Component loader for navbar/footer
 │   │   ├── content-loader.js   # Dynamic content from JSON
@@ -309,27 +313,81 @@ Dynamic content will be managed via JSON files in `/data/`:
 
 ---
 
-## Placeholders and Future Work
+## Content Conventions
 
-### Current Placeholders
-- ❌ Logo files (need SVG and PNG)
-- ❌ App screenshots (12+ images for carousel)
-- ❌ Instructional videos (MP4, <50MB, 720p)
-- ❌ Cloudflare Analytics token (in index.html)
-- ❌ Open Graph image
-- ❌ Favicon
+### Don't claim tax compliance
 
-### Future Pages (Phase 3)
-- features.html
-- announcements.html
-- faq.html
-- privacy.html
-- terms.html
+The app deliberately carries no Canada Revenue Agency branding in its interface. Agency references
+and specific tax line numbers were stripped out in April 2026 — tracking price differences is what
+the app does, and what a user does with those records at tax time is between them and their
+accountant. **The site follows the same rule.**
 
-### Future Features (Phase 4)
-- Horizontal screenshot carousel with stacked effect
-- HTML5 video player for instructional content
-- Lazy loading for images
+- Explain the Medical Expense Tax Credit as context for why the app exists. That's fair and useful.
+- Never describe the app's exports as CRA-compliant, approved, accepted, or endorsed.
+- Never promise anyone a deduction. Where it's relevant, mention that the credit only applies to
+  medical expenses above roughly 3% of net income — a modest year may not reach it.
+
+Before merging copy changes, sweep for regressions:
+
+```
+grep -rn "CRA\|Tax Compliant\|tax compliance\|Line 33099" --include=*.html --include=*.json .
+```
+
+Every surviving hit should be explanatory context, never a claim about the app's output.
+
+### Describe the app as it currently works
+
+The headline metric is the **unit price differential** — cost per unit, scaled back to the size
+actually purchased — not the package-to-package difference, which is kept beside it for reference.
+Copy that leads with package price is out of date. Likewise, capturing a product is a single review
+screen with three steps (name, price, size), and **size is optional**. Don't describe it as
+mandatory or as a separate screen.
+
+When the app changes, the blog gets updated first (there's a GitHub Actions reminder on every merged
+PR). The static pages have no such prompt and are the ones that quietly rot — check them against
+`data/blog.json` and the app's release notes whenever a feature lands.
+
+### Don't overclaim on privacy either
+
+Local-only storage, on-device text recognition, no accounts, no sync: all true, all worth saying.
+But backup files are **not** encrypted. Don't say they are.
+
+---
+
+## Outstanding Work
+
+The original launch placeholders — logo, favicon, Open Graph image, Cloudflare Analytics token,
+screenshots, and videos — were all resolved during January 2026, and every page planned in the
+original build now exists (plus `beta.html` and `blog.html`, which came later). What follows is
+what's actually outstanding.
+
+### Media is out of date
+The three walkthrough videos were recorded January 17–24 2026 and the majority of the carousel
+screenshots on January 3. Both predate the move to unit pricing as the headline figure (April 2026)
+and the rebuilt three-step capture review (July 2026), so they show screens that no longer exist.
+Both sections carry a `.media-note` saying so. Replacing them needs a device or simulator session:
+
+- Re-record the three walkthroughs against the current build.
+- Re-capture screenshots 08–14 (capture flow, receipt views, product detail, list, export,
+  dashboard).
+- Keep video files under 50MB — `receipt-management.mp4` is already at 49MB.
+
+### Videos have no captions
+No VTT track exists for any video. This was deferred at launch and is still open; it's the site's
+most significant remaining accessibility gap.
+
+### Canonical domain is inconsistent
+`CNAME` holds `www.gfpricechecker.com`, but every canonical link, Open Graph URL, JSON-LD entry,
+sitemap URL, and `robots.txt` reference uses the bare `gfpricechecker.com`. One of the two is wrong.
+Pick the canonical host, then sweep all of them to match.
+
+### Legal review
+`privacy.html` and `terms.html` were revised on January 25 2026 and no longer carry placeholder
+banners, but they have never had professional legal review.
+
+### Not built
+A community product database was once advertised on the features page as "Planned". It was never
+built and the card has been removed rather than left promising something that isn't coming.
 
 ---
 
@@ -586,80 +644,12 @@ This project strictly follows DESIGN-SYSTEM.md:
 
 ### Placeholder Content Status
 
-**Assets Requiring Replacement Before Launch**:
-
-1. **Logo Files** (Priority: HIGH):
-   - Location: `/assets/images/logos/`
-   - Required formats: SVG (primary), PNG (fallback)
-   - Currently: Placeholder references in HTML
-   - Used on: All 6 pages in navbar
-
-2. **App Screenshots** (Priority: MEDIUM):
-   - Location: `/assets/images/screenshots/`
-   - Required: 12+ screenshots (9:16 aspect ratio, iPhone format)
-   - Current state: Placeholder via.placeholder.com images
-   - Used on: features.html carousel
-   - Replacement instructions: Update `data-src` attributes in features.html:103-161
-
-3. **Instructional Videos** (Priority: LOW):
-   - Location: `/assets/video/`
-   - Required files:
-     - `getting-started.mp4`
-     - `price-tracking.mp4`
-     - `receipt-management.mp4`
-     - `tax-reports.mp4`
-   - Requirements: MP4 format, H.264 codec, 720p max, <50MB each
-   - Current state: Placeholder poster images, video files referenced but not present
-   - Used on: features.html video grid
-
-4. **Open Graph Image** (Priority: MEDIUM):
-   - Location: `/assets/images/og-image.png`
-   - Recommended size: 1200x630px
-   - Current state: Referenced in meta tags but file doesn't exist
-   - Used on: All pages for social media sharing
-
-5. **Favicon** (Priority: LOW):
-   - Location: `/assets/images/favicon.png`
-   - Current state: Referenced but file doesn't exist
-   - Used on: All pages
-
-6. **Cloudflare Analytics Token** (Priority: HIGH):
-   - Location: HTML `<head>` section of all pages
-   - Current state: Commented out with "TODO" note
-   - Action required: Replace "YOUR_TOKEN_HERE" with actual Cloudflare site tag
-   - Affects: All 6 pages
-
-### JSON Data Files Status
-
-**✅ status.json**:
-- Current state: "coming-soon"
-- Message: "Coming Soon! GF PriceChecker is currently in development."
-- Status: Ready for launch
-- No changes needed
-
-**✅ announcements.json**:
-- Contains launch announcement dated 2026-01-02
-- Status: Ready for launch
-- Future updates: Add new announcements to array as needed
-
-**✅ faq.json**:
-- Contains 3 comprehensive FAQ items
-- Covers: What is GF PriceChecker, tax deductions, availability
-- Status: Ready for launch
-
-### Legal Content Status
-
-**⚠️ privacy.html**:
-- Status: **PLACEHOLDER - REQUIRES LEGAL REVIEW**
-- Prominent note displayed: "This is placeholder content. Final privacy policy will be prepared with legal review before app launch."
-- Last updated: January 2, 2026
-- Action required: Professional legal review and finalization before app launch
-
-**⚠️ terms.html**:
-- Status: **PLACEHOLDER - REQUIRES LEGAL REVIEW**
-- Prominent note displayed: "This is placeholder content. Final terms of use will be prepared with legal review before app launch."
-- Last updated: January 2, 2026
-- Action required: Professional legal review and finalization before app launch
+> **Historical.** This section recorded the state of the site at the end of the January 2026 build,
+> when the logo, screenshots, videos, Open Graph image, favicon, and Cloudflare Analytics token were
+> all still outstanding, and `privacy.html` and `terms.html` carried placeholder banners. All of
+> those were resolved during January 2026 — the analytics token is live on every page and the legal
+> placeholder banners are gone. For what is genuinely still open, see
+> [Outstanding Work](#outstanding-work) above.
 
 ### Final Validation Checks
 
@@ -715,15 +705,8 @@ This project strictly follows DESIGN-SYSTEM.md:
 - [x] All links tested and functional
 - [x] Legal content flagged for review
 
-**Pending Tasks (Before Production Launch)**:
-- [ ] Replace logo placeholder with actual logo files
-- [ ] Add Cloudflare Web Analytics token to all pages
-- [ ] Add Open Graph image for social sharing
-- [ ] Add favicon
-- [ ] Privacy policy: Professional legal review and finalization
-- [ ] Terms of use: Professional legal review and finalization
-- [ ] Optional: Add app screenshots (can use placeholders initially)
-- [ ] Optional: Add instructional videos (can use placeholders initially)
+**Pending Tasks**: every item on this list except legal review was completed during January 2026.
+See [Outstanding Work](#outstanding-work) above for what remains.
 
 **Deployment Notes**:
 - GitHub Pages will serve from `main` branch root directory
@@ -763,11 +746,17 @@ This project strictly follows DESIGN-SYSTEM.md:
 ## Contact & Support
 
 **Repository**: https://github.com/CuWilliams/GFPriceChecker.github.io
-**Documentation**: See `Documents/` folder for detailed requirements and execution plan
+**Getting started**: See `README.md` for how the site is built, run locally, and added to
 **Design Guidelines**: See `DESIGN-SYSTEM.md` for design tokens and patterns
+**Release history**: See `CHANGELOG.md` for the versioning approach and past releases
+**Original build plans**: See `Documents/archive/` — historical, kept for reference only
 
 ---
 
-*Last Updated: January 2, 2026 - All Phases Complete (1-6)*
+*Last Updated: August 12, 2026*
 
-**Project Status**: Ready for deployment with noted placeholders. Legal content requires professional review before app launch.
+**Project Status**: Live at [gfpricechecker.com](https://gfpricechecker.com), serving an app in
+public TestFlight beta. The Phase 1–6 sections below the design and conventions material are a
+historical record of the January 2026 build, not a description of the site today. Outstanding items
+are listed under [Outstanding Work](#outstanding-work): media showing an older build, missing video
+captions, the `www` vs. bare-domain inconsistency, and legal review.

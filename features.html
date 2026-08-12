@@ -7,7 +7,7 @@
   <!-- Primary Meta Tags -->
   <title>Features - GF PriceChecker</title>
   <meta name="title" content="Features - GF PriceChecker">
-  <meta name="description" content="Discover how GF PriceChecker helps you track gluten-free product price differentials, manage receipts, and generate tax reports for Canadian medical expense deductions.">
+  <meta name="description" content="How GF PriceChecker works: unit price comparison adjusted for package size, guided shelf-tag scanning, receipt verification, and PDF and CSV export of your records.">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://gfpricechecker.com/features.html">
@@ -16,14 +16,14 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gfpricechecker.com/features.html">
   <meta property="og:title" content="Features - GF PriceChecker">
-  <meta property="og:description" content="Discover how GF PriceChecker helps you track gluten-free product price differentials, manage receipts, and generate tax reports for Canadian medical expense deductions.">
+  <meta property="og:description" content="How GF PriceChecker works: unit price comparison adjusted for package size, guided shelf-tag scanning, receipt verification, and PDF and CSV export of your records.">
   <meta property="og:image" content="https://gfpricechecker.com/assets/images/og-image.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://gfpricechecker.com/features.html">
   <meta property="twitter:title" content="Features - GF PriceChecker">
-  <meta property="twitter:description" content="Discover how GF PriceChecker helps you track gluten-free product price differentials, manage receipts, and generate tax reports for Canadian medical expense deductions.">
+  <meta property="twitter:description" content="How GF PriceChecker works: unit price comparison adjusted for package size, guided shelf-tag scanning, receipt verification, and PDF and CSV export of your records.">
   <meta property="twitter:image" content="https://gfpricechecker.com/assets/images/og-image.png">
 
   <!-- Favicon -->
@@ -44,7 +44,7 @@
     "name": "GF PriceChecker",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "iOS",
-    "description": "Track gluten-free product price differentials for Canadian tax deductions. Compare prices, manage receipts, and generate CRA-compliant tax reports.",
+    "description": "Track gluten-free product price differentials by unit price, adjusted for package size. Scan shelf tags, verify purchases against receipts, and export your records as PDF or CSV.",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -61,10 +61,11 @@
     },
     "countriesSupported": "CA",
     "featureList": [
-      "Price comparison tracking for gluten-free products",
-      "Receipt scanning and management",
-      "Tax report generation for CRA medical expense claims",
-      "Product database with price history",
+      "Unit price comparison adjusted for package size",
+      "Shelf tag scanning with on-device text recognition",
+      "Guided three-step capture of product name, price, and size",
+      "Receipt verification with line-by-line product matching",
+      "PDF and CSV export with receipt images",
       "Privacy-focused local-first storage"
     ]
   }
@@ -83,17 +84,17 @@
 
     <!-- Status Banner (will be populated from status.json) -->
     <div class="container">
-      <div id="status-banner" class="status-banner status-banner-coming-soon" role="status" aria-live="polite">
-        <strong>Coming Soon!</strong> GF PriceChecker is currently in development.
+      <div id="status-banner" class="status-banner status-banner-testflight" role="status" aria-live="polite">
+        <strong>Beta Testing!</strong> Join our TestFlight beta program.
       </div>
     </div>
 
     <!-- Hero Section -->
     <section class="section">
       <div class="container text-center">
-        <h1>Powerful Features for Tax Compliance</h1>
+        <h1>What the App Does</h1>
         <p style="max-width: 700px; margin-left: auto; margin-right: auto;">
-          GF PriceChecker simplifies tracking gluten-free product price differentials, helping Canadians with celiac disease or gluten intolerance maximize their medical expense deductions.
+          GF PriceChecker measures the real cost premium on gluten-free groceries — comparing cost per unit rather than package to package — and keeps the receipts and photographs that back every figure up.
         </p>
       </div>
     </section>
@@ -101,7 +102,12 @@
     <!-- App Screenshots Carousel Placeholder -->
     <section class="section" style="background-color: var(--light-gray);">
       <div class="container">
-        <h2 class="text-center mb-xl">See It in Action</h2>
+        <h2 class="text-center mb-md">See It in Action</h2>
+        <p class="media-note">
+          Some of these screenshots were captured in January 2026 and show an earlier build.
+          The current release leads with the unit price differential and uses a three-step
+          review when capturing a product. New screenshots are on the way.
+        </p>
 
         <!-- Carousel -->
         <div class="carousel" role="region" aria-label="App screenshots carousel" tabindex="0">
@@ -221,10 +227,12 @@
         <h2 class="text-center mb-xl">What is GF PriceChecker?</h2>
         <div style="max-width: 800px; margin: 0 auto;">
           <p>
-            GF PriceChecker is an iOS app designed specifically for Canadians who need to track the incremental cost of gluten-free products for tax purposes. If you have celiac disease or gluten intolerance, the Canada Revenue Agency (CRA) allows you to claim the price differential between gluten-free and regular products as a medical expense.
+            GF PriceChecker is an iOS app for Canadians tracking the incremental cost of eating gluten free. For someone with celiac disease, that premium is a medical expense, and Canada's
+            <a href="https://www.celiac.ca/incremental-medical-tax/" target="_blank" rel="noopener noreferrer">Medical Expense Tax Credit</a>
+            recognizes the difference in price between a gluten-free product and its regular equivalent — provided you can document it.
           </p>
           <p>
-            Our app makes this process simple and accurate, helping you maintain proper documentation and maximize your eligible deductions without the hassle of manual tracking and calculations.
+            The app's job is the documenting: capture both products, capture both sizes, keep the receipt, and calculate the difference honestly. What you do with those records at tax time is between you and your accountant. The app makes no claim about what you're eligible to deduct, and the credit only applies to medical expenses above a threshold of roughly three percent of net income.
           </p>
         </div>
       </div>
@@ -237,9 +245,13 @@
         <div class="grid">
 
           <div class="card">
-            <h3 class="card-title">Price Comparison Tracking</h3>
+            <h3 class="card-title">Unit Price Comparison</h3>
             <p class="card-text">
-              Easily compare prices between gluten-free and regular equivalent products. Our app calculates the differential automatically, ensuring accurate records for your tax claims.
+              Gluten-free products don't only cost more — they frequently contain less. A $7.99 400g
+              gluten-free loaf next to a $3.99 675g regular one looks like a $4.00 gap. Compared by
+              cost per gram and scaled back to the size you actually bought, the premium is $5.63.
+              The app leads with that size-adjusted figure everywhere and keeps the plain package
+              difference alongside it for reference.
             </p>
             <div class="card-footer">
               <span class="badge badge-primary">Core Feature</span>
@@ -247,9 +259,12 @@
           </div>
 
           <div class="card">
-            <h3 class="card-title">Receipt Management</h3>
+            <h3 class="card-title">Package Size Capture</h3>
             <p class="card-text">
-              Scan and organize your receipts in one place. Keep digital copies of your purchases with timestamps and categorization for easy retrieval during tax season.
+              Enter size the way the shelf tag gives it to you: type the package size directly, or
+              enter the posted unit price and let the app work backwards from it — in cents or
+              dollars, whichever the tag uses. Size is optional. Skip it when you're in a hurry and
+              the app simply tells you which items sat out of the unit price totals.
             </p>
             <div class="card-footer">
               <span class="badge badge-primary">Core Feature</span>
@@ -257,9 +272,12 @@
           </div>
 
           <div class="card">
-            <h3 class="card-title">Tax Reports</h3>
+            <h3 class="card-title">Guided Shelf Tag Scanning</h3>
             <p class="card-text">
-              Generate comprehensive reports that summarize your gluten-free product expenses and calculated differentials. Export-ready formats make filing your taxes straightforward.
+              Photograph the shelf tag and the app reads it on device. A single review screen walks
+              you through three steps — tap the product name, tap the price, tap the size — with the
+              scan results staying in front of you the whole time. Nothing is committed until you
+              confirm it, and anything the scan misses can be typed in by hand.
             </p>
             <div class="card-footer">
               <span class="badge badge-primary">Core Feature</span>
@@ -267,29 +285,37 @@
           </div>
 
           <div class="card">
-            <h3 class="card-title">Product Database</h3>
+            <h3 class="card-title">Receipt Verification</h3>
             <p class="card-text">
-              Access a growing database of gluten-free products with price history and equivalents. Save time by leveraging community data while maintaining your personal tracking.
+              Choose the products from a shopping trip, scan the receipt, then work through them one
+              at a time, tapping the line on the receipt that matches. The app flags a suggested line
+              to save you hunting for it. Confirmed products are marked verified and stay linked to
+              the receipt image, which travels with them into your exports.
             </p>
             <div class="card-footer">
-              <span class="badge">Planned</span>
+              <span class="badge badge-primary">Core Feature</span>
             </div>
           </div>
 
           <div class="card">
-            <h3 class="card-title">CRA Compliance</h3>
+            <h3 class="card-title">Records You Can Stand On</h3>
             <p class="card-text">
-              Built with CRA medical expense guidelines in mind. Our reports include the documentation format accepted by the Canada Revenue Agency.
+              Export a year as a PDF report or a CSV spreadsheet: every product itemized with both
+              prices, both sizes, both differentials, the purchase date, and the receipt image that
+              backs it up. Products still lacking a receipt are listed separately rather than
+              quietly folded into the totals.
             </p>
             <div class="card-footer">
-              <span class="badge badge-success">Tax Compliant</span>
+              <span class="badge badge-primary">Core Feature</span>
             </div>
           </div>
 
           <div class="card">
             <h3 class="card-title">Privacy-Focused</h3>
             <p class="card-text">
-              Your financial and health data stays on your device. We prioritize your privacy with local-first storage and optional encrypted backups.
+              Your financial and health data stays on your device. Text recognition runs on device,
+              there are no accounts and no cloud sync, and backups are files you control and store
+              wherever you choose.
             </p>
             <div class="card-footer">
               <span class="badge badge-success">Secure</span>
@@ -303,16 +329,22 @@
     <!-- Instructional Videos -->
     <section class="section">
       <div class="container">
-        <h2 class="text-center mb-xl">How It Works</h2>
+        <h2 class="text-center mb-md">How It Works</h2>
+        <p class="media-note">
+          These walkthroughs were recorded in January 2026, before unit pricing became the app's
+          headline figure and before the capture review was rebuilt into three steps. The workflow
+          they show is broadly the same, but the screens have moved on. Replacements are being
+          recorded.
+        </p>
 
         <!-- Video Grid (3 videos) -->
         <div class="video-grid video-grid-three">
 
           <!-- Video 1: Price Tracking -->
           <div class="video-item">
-            <h3 class="video-title">Tracking Price Differentials</h3>
+            <h3 class="video-title">Capturing a Product Pair</h3>
             <p class="video-description">
-              Step-by-step guide on comparing gluten-free products to regular alternatives and tracking the price difference.
+              Photographing a gluten-free shelf tag and its regular equivalent, then reviewing what the scan picked up.
             </p>
             <div class="video-container">
               <video class="video-player"
@@ -327,9 +359,9 @@
 
           <!-- Video 2: Receipt Management -->
           <div class="video-item">
-            <h3 class="video-title">Managing Receipts</h3>
+            <h3 class="video-title">Verifying Against a Receipt</h3>
             <p class="video-description">
-              Discover how to scan, organize, and manage your receipts for easy retrieval during tax season.
+              Scanning a receipt and matching it to the products you captured, so each one is backed by proof of purchase.
             </p>
             <div class="video-container">
               <video class="video-player"
@@ -344,9 +376,9 @@
 
           <!-- Video 3: Tax Reports -->
           <div class="video-item">
-            <h3 class="video-title">Generating Tax Reports</h3>
+            <h3 class="video-title">Exporting Your Records</h3>
             <p class="video-description">
-              Learn how to generate comprehensive reports that are ready for your CRA medical expense claims.
+              Producing a PDF report or CSV spreadsheet of a year's tracked products, receipt images included.
             </p>
             <div class="video-container">
               <video class="video-player"
@@ -367,12 +399,12 @@
     <!-- CTA Section -->
     <section class="section" style="background-color: var(--light-gray);">
       <div class="container text-center">
-        <h2>Ready to Simplify Your Tax Deductions?</h2>
+        <h2>Try It Before It Launches</h2>
         <p class="mb-lg">
-          Join the waitlist to be notified when GF PriceChecker launches on the App Store.
+          GF PriceChecker is in public beta on TestFlight. It's free, and your feedback shapes what ships.
         </p>
         <div class="empty-state-action">
-          <span class="badge badge-primary" style="font-size: var(--text-md); padding: var(--space-md) var(--space-xl);">Coming Soon</span>
+          <a href="/beta.html" class="button button-primary" style="font-size: var(--text-md); padding: var(--space-md) var(--space-xl);">Join the Beta</a>
         </div>
       </div>
     </section>
