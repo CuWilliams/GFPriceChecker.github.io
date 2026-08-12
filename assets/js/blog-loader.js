@@ -8,28 +8,7 @@
   'use strict';
 
   // Shorthand references to utility functions
-  const { fetchJSON, escapeHtml, renderEmptyState, renderCard } = window.GFUtils;
-
-  /**
-   * Preserve line breaks in content
-   * @param {string} content - Content with line breaks
-   * @returns {string} HTML with preserved line breaks
-   */
-  function preserveLineBreaks(content) {
-    if (!content) return '';
-    const paragraphs = content.split('\n\n');
-    return paragraphs
-      .map(para => {
-        const trimmed = para.trim();
-        if (trimmed) {
-          const withBreaks = trimmed.replace(/\n/g, '<br>');
-          return `<p class="card-text">${escapeHtml(withBreaks).replace(/&lt;br&gt;/g, '<br>')}</p>`;
-        }
-        return '';
-      })
-      .filter(p => p)
-      .join('');
-  }
+  const { fetchJSON, preserveLineBreaks, renderEmptyState, renderCard } = window.GFUtils;
 
   /**
    * Load and render full blog posts list

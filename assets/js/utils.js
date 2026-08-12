@@ -38,12 +38,38 @@
   }
 
   /**
+   * Split content into paragraphs, preserving single line breaks
+   * @param {string} content - Content with line breaks
+   * @returns {string} HTML with preserved line breaks
+   */
+  function preserveLineBreaks(content) {
+    if (!content) return '';
+    const paragraphs = content.split('\n\n');
+    return paragraphs
+      .map(para => {
+        const trimmed = para.trim();
+        if (trimmed) {
+          const withBreaks = trimmed.replace(/\n/g, '<br>');
+          return `<p class="card-text">${escapeHtml(withBreaks).replace(/&lt;br&gt;/g, '<br>')}</p>`;
+        }
+        return '';
+      })
+      .filter(p => p)
+      .join('');
+  }
+
+  /**
    * Format date as "Month Day, Year"
    * @param {string} dateString - ISO date string (YYYY-MM-DD)
    * @returns {string} Formatted date
    */
   function formatDate(dateString) {
-    const date = new Date(dateString);
+    // "YYYY-MM-DD" is parsed as UTC midnight by the Date constructor, which renders
+    // as the previous day for anyone west of UTC. Build it as a local date instead.
+    const parts = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateString));
+    const date = parts
+      ? new Date(Number(parts[1]), Number(parts[2]) - 1, Number(parts[3]))
+      : new Date(dateString);
     return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
@@ -144,6 +170,7 @@
   window.GFUtils = {
     fetchJSON: fetchJSON,
     escapeHtml: escapeHtml,
+    preserveLineBreaks: preserveLineBreaks,
     formatDate: formatDate,
     renderEmptyState: renderEmptyState,
     renderCard: renderCard,

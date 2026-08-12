@@ -1,96 +1,102 @@
-# GFPriceChecker
+# GFPriceChecker.github.io
 
-iOS app for tracking gluten-free vs regular product price differentials for Canadian tax deductions.
+The marketing and documentation website for **GF PriceChecker**, an iOS app that helps Canadians measure and document the price premium on gluten-free groceries.
 
-## Overview
+Live at [gfpricechecker.com](https://gfpricechecker.com). The app itself lives in a separate repository: [CuWilliams/GFPriceChecker](https://github.com/CuWilliams/GFPriceChecker).
 
-GFPriceChecker helps individuals with celiac disease document the price difference between gluten-free and regular products for Canadian Revenue Agency (CRA) medical expense claims. The app provides camera-based OCR scanning, receipt verification, and professional PDF/CSV export reports.
+## How the site is built
 
-## Status
+A static site served directly by GitHub Pages from the root of `main`. There is **no build step, no bundler, and no dependencies** — hand-authored HTML, CSS, and vanilla JavaScript. Push to `main` and it deploys.
 
-**Active Development** - Currently in field testing and refinement.
+Two ideas do most of the work:
 
-This is a personal project built primarily for family use, made available to the broader celiac community at no cost.
+**Shared components are fetched at runtime.** Every page contains `<div id="navbar-placeholder"></div>` and `<div id="footer-placeholder"></div>`. On load, `assets/js/components.js` fetches `components/navbar.html` and `components/footer.html` and injects them, then re-runs the nav initializers from `main.js` against the newly inserted DOM. Edit the nav or footer once, in `components/`, and every page picks it up.
 
-## Features
+**Content that changes often lives in JSON.** Blog posts, announcements, FAQ entries, and the status banner are data files under `data/`, rendered client-side by `content-loader.js` and `blog-loader.js`. Adding a post means editing JSON, not HTML.
 
-- Manual product entry with price comparison
-- Camera scanning with OCR for shelf price tags and receipts
-- Receipt verification and product matching
-- PDF and CSV export for CRA tax filing
-- Data backup/restore
-- No ads, no tracking, completely free
+## Layout
 
-## Requirements
-
-- **iOS:** 18.0 or later
-- **Xcode:** 16.1.1 or later
-- **Swift:** 6.0
-- **Device:** iPhone with camera (recommended for OCR features)
-
-## Installation
-
-1. Clone the repository
 ```
-git clone https://github.com/CuWilliams/GFPriceChecker.git
-```
-
-2. Open project in Xcode
-```
-cd GFPriceChecker
-open GFPriceChecker.xcodeproj
-```
-
-3. Build and run
-- Select target device or simulator
-- Press `Cmd+R` to build and run
-
-## Documentation
-
-Comprehensive development history and technical decisions documented in `claude.md`.
-
-For website development plan, see `TECHNICAL_REQUIREMENTS.md` and `EXECUTION_PLAN.md`.
-
-## Project Structure
-```
-GFPriceChecker/
-├── Models/              # SwiftData persistence models
-├── Views/               # SwiftUI views
-│   ├── Library/         # Product list and detail views
-│   ├── CaptureFlow/     # Camera and manual entry
-│   ├── Reports/         # Export and dashboard
-│   ├── Settings/        # App settings and preferences
-│   └── Onboarding/      # First-run experience
-├── ViewModels/          # Business logic and state management
-├── Services/            # OCR, PDF, CSV, image storage
-├── Utilities/           # Helpers and reusable components
-└── Resources/           # Assets and app branding
+├── index.html                 # Home
+├── features.html              # What the app does, screenshots, walkthrough videos
+├── beta.html                  # TestFlight instructions and testing focus areas
+├── blog.html                  # Developer blog (rendered from data/blog.json)
+├── announcements.html         # Release announcements
+├── faq.html                   # Frequently asked questions
+├── privacy.html, terms.html   # Legal
+│
+├── components/                # navbar.html, footer.html — injected at runtime
+├── data/                      # blog.json, announcements.json, faq.json, status.json
+├── assets/
+│   ├── css/                   # base.css (tokens, reset, utilities), components.css
+│   ├── js/                    # utils.js, components.js, content-loader.js,
+│   │                          #   blog-loader.js, main.js
+│   ├── images/                # logos, favicon, OG image, screenshots/, video posters
+│   └── video/                 # walkthrough videos (keep under 50MB each)
+│
+├── Documents/archive/         # Historical build plans from the site's construction
+├── CHANGELOG.md               # Site release history
+├── DESIGN-SYSTEM.md           # Design tokens and component reference
+└── Claude.md                  # Working notes and conventions for this repo
 ```
 
-## Contributing
+Script load order matters: `utils.js` defines `window.GFUtils` and must come before `content-loader.js` and `blog-loader.js`, which consume it.
 
-This is a personal project with limited maintenance bandwidth. 
+## Running locally
 
-- **Forks:** Encouraged
-- **Pull Requests:** Welcome but may not be reviewed promptly
-- **Issues:** GitHub Issues disabled - contact via methods below instead
+```
+python3 -m http.server 8000
+```
 
-If you want to build an Android version or contribute significant features, please contact me.
+Then open `http://localhost:8000`. A server is required rather than opening the files directly — the component includes and JSON loading both use `fetch()`, which browsers block on `file://` URLs.
+
+## Adding content
+
+**A blog post** — prepend an object to `data/blog.json`:
+
+```json
+{
+  "id": "2026-08-12-post-slug",
+  "date": "2026-08-12",
+  "title": "Post Title",
+  "content": "First paragraph.\n\nSecond paragraph."
+}
+```
+
+Separate paragraphs with `\n\n`. Content is escaped before rendering, so write plain prose — Markdown is not parsed, and any HTML you include will be shown as literal text. Posts are sorted by date, newest first, so file order doesn't matter. The `id` becomes the anchor (`/blog.html#post-<id>`), so keep it stable once published.
+
+**An announcement** — the same shape, in `data/announcements.json`. The home page shows a preview of the most recent one.
+
+**An FAQ entry** — `data/faq.json`, with `id`, `question`, and `answer`. These render as an accordion in file order.
+
+**The status banner** — `data/status.json` drives the banner on every page. Each page also hardcodes a matching fallback so the banner still reads correctly before JavaScript runs; if you change the state here, update those fallbacks too.
+
+After editing any data file, confirm it still parses:
+
+```
+for f in data/*.json; do python3 -m json.tool "$f" > /dev/null && echo "OK $f"; done
+```
+
+A malformed file fails silently in the browser and renders an empty state.
+
+## Writing conventions
+
+The app deliberately carries no Canada Revenue Agency branding in its interface — tracking price differences is the app's job, and what a user does with those records at tax time is between them and their accountant. **The site follows the same rule.** Explain the Medical Expense Tax Credit as context for why the app exists, but don't describe the app's output as CRA-compliant, approved, or endorsed, and don't promise anyone a deduction.
+
+Beyond that, see [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md) for design tokens and component patterns, and [Claude.md](Claude.md) for the fuller set of working notes.
+
+## Releases
+
+Site releases are annotated git tags on `main`, with history in [CHANGELOG.md](CHANGELOG.md). See the top of that file for the versioning approach.
 
 ## Contact
 
-- **GitHub Issues:** [@CuWilliams](https://github.com/CuWilliams)
 - **X (Twitter):** [@CurtisWill3z](https://x.com/CurtisWill3z)
 - **LinkedIn:** [Curtis Williams](https://www.linkedin.com/in/curtis-williams-154382b3)
+- **Email:** gfpricechecker@gmail.com
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License — see [LICENSE](LICENSE).
 
 Copyright (c) 2025 Curtis Williams
-
-## Acknowledgments
-
-Developed with assistance from Anthropic's Claude AI using Claude Code for iOS development and documentation.
-
-Built for the celiac community with focus on Canadian tax compliance requirements.

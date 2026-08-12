@@ -766,6 +766,16 @@
   margin: 0;
 }
 
+/* Note above media that shows an older build */
+.media-note {
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+  font-size: var(--text-sm);
+  color: var(--medium-gray);
+  line-height: var(--line-height-relaxed);
+  text-align: center;
+}
+
 /* ========================================
    BETA PAGE LISTS
    ======================================== */

@@ -7,7 +7,7 @@
   <!-- Primary Meta Tags -->
   <title>GF PriceChecker - Track Gluten-Free Product Price Differentials</title>
   <meta name="title" content="GF PriceChecker - Track Gluten-Free Product Price Differentials">
-  <meta name="description" content="Compare gluten-free product prices and track price differentials for Canadian tax deductions. Your companion app for medical expense claims.">
+  <meta name="description" content="Track what gluten-free products really cost. GF PriceChecker compares gluten-free and regular products by unit price, adjusted for package size, and keeps the receipts that back it up.">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://gfpricechecker.com/">
@@ -16,14 +16,14 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gfpricechecker.com/">
   <meta property="og:title" content="GF PriceChecker - Track Gluten-Free Product Price Differentials">
-  <meta property="og:description" content="Compare gluten-free product prices and track price differentials for Canadian tax deductions. Your companion app for medical expense claims.">
+  <meta property="og:description" content="Track what gluten-free products really cost. GF PriceChecker compares gluten-free and regular products by unit price, adjusted for package size, and keeps the receipts that back it up.">
   <meta property="og:image" content="https://gfpricechecker.com/assets/images/og-image.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://gfpricechecker.com/">
   <meta property="twitter:title" content="GF PriceChecker - Track Gluten-Free Product Price Differentials">
-  <meta property="twitter:description" content="Compare gluten-free product prices and track price differentials for Canadian tax deductions. Your companion app for medical expense claims.">
+  <meta property="twitter:description" content="Track what gluten-free products really cost. GF PriceChecker compares gluten-free and regular products by unit price, adjusted for package size, and keeps the receipts that back it up.">
   <meta property="twitter:image" content="https://gfpricechecker.com/assets/images/og-image.png">
 
   <!-- Favicon -->
@@ -44,7 +44,7 @@
     "name": "GF PriceChecker",
     "url": "https://gfpricechecker.com",
     "logo": "https://gfpricechecker.com/assets/images/logos/logo.svg",
-    "description": "Track gluten-free product price differentials for Canadian tax deductions. Your companion app for medical expense claims.",
+    "description": "Track gluten-free product price differentials by unit price, adjusted for package size, with receipt verification and exportable records.",
     "foundingDate": "2026",
     "sameAs": [],
     "contactPoint": {
@@ -73,8 +73,8 @@
 
     <!-- Status Banner (will be populated from status.json) -->
     <div class="container">
-      <div id="status-banner" class="status-banner status-banner-coming-soon" role="status" aria-live="polite">
-        <strong>Coming Soon!</strong> GF PriceChecker is currently in development.
+      <div id="status-banner" class="status-banner status-banner-testflight" role="status" aria-live="polite">
+        <strong>Beta Testing!</strong> Join our TestFlight beta program.
       </div>
     </div>
 
@@ -88,10 +88,14 @@
 
         <!-- App Store Badge Placeholder -->
         <div class="empty-state">
-          <h2 class="empty-state-title">Coming to the App Store</h2>
+          <h2 class="empty-state-title">Now in Public Beta</h2>
           <p class="empty-state-description">
-            GF Pricechecker is being developed as an iOS application, to be made available at no cost, and completely ad-free on the App Store.
+            GF PriceChecker is an iOS app, available now through TestFlight while it's in beta.
+            It will be free and completely ad-free on the App Store.
           </p>
+          <div class="empty-state-action" style="margin-top: var(--space-lg);">
+            <a href="/beta.html" class="button button-primary">Join the Beta</a>
+          </div>
         </div>
       </div>
     </section>
@@ -124,8 +128,10 @@
             <h3 class="card-title">A Complex Claim Process</h3>
             <p class="card-text">
               Claiming the METC requires retaining every receipt, calculating the price differential
-              for each product, and submitting detailed records at tax time — a process most
-              Canadians with celiac disease find too complex to use effectively.
+              for each product, and producing detailed records if asked — a process most
+              Canadians with celiac disease find too complex to use effectively. It also only
+              applies to medical expenses above a threshold of roughly three percent of net income,
+              so a modest year of gluten-free purchases may not reach it on its own.
             </p>
           </div>
         </div>
@@ -134,11 +140,14 @@
         <div class="card" style="border-left: 4px solid var(--primary-blue);">
           <h3 class="card-title"><a href="https://www.celiac.ca" target="_blank" rel="noopener noreferrer">Celiac Canada</a> Advocacy</h3>
           <p class="card-text">
-            Celiac Canada is actively lobbying the federal government to replace the METC with a
+            Celiac Canada is lobbying the federal government to replace the METC with a
             simple, flat refundable tax credit of $1,000 per adult and $600 per child — eliminating
             the administrative burden entirely.
             <a href="https://www.ourcommons.ca/petitions/en/Petition/Details?Petition=e-6853" target="_blank" rel="noopener noreferrer">Petition e-6853</a>,
             supported by 33,000 Canadians, was presented in Parliament in February 2026.
+            In March 2026 the government declined it: the Medical Expense Tax Credit stays as it is,
+            and itemized receipts remain your responsibility to keep and produce on request.
+            Celiac Canada is continuing to press the case ahead of the fall budget.
           </p>
           <p class="card-text" style="margin-top: var(--space-sm);">
             <strong>GF PriceChecker fully supports this effort.</strong> We genuinely hope this
@@ -183,21 +192,28 @@
         <h2 class="text-center mb-xl">Key Features</h2>
         <div class="grid">
           <div class="card">
-            <h3 class="card-title">Price Comparison</h3>
+            <h3 class="card-title">Unit Price Comparison</h3>
             <p class="card-text">
-              Compare prices between gluten-free and regular products to track price differentials for tax purposes.
+              Gluten-free products don't just cost more — they often contain less. Capture both
+              package sizes and the app compares cost per unit, not just package to package.
+              A $7.99 400g gluten-free loaf beside a $3.99 675g regular one looks like a $4.00
+              difference. Adjusted for size, the real premium is <strong>$5.63</strong>.
             </p>
           </div>
           <div class="card">
-            <h3 class="card-title">Receipt Tracking</h3>
+            <h3 class="card-title">Receipt Verification</h3>
             <p class="card-text">
-              Scan and organize your receipts to maintain accurate records for CRA medical expense claims.
+              Pick the products from a shopping trip, scan the receipt, and tap the matching line
+              for each one. The app suggests likely matches from the scanned text. Verified products
+              stay linked to the receipt image that backs them up.
             </p>
           </div>
           <div class="card">
-            <h3 class="card-title">Tax Reports</h3>
+            <h3 class="card-title">Reports &amp; Export</h3>
             <p class="card-text">
-              Generate comprehensive reports that simplify your medical expense deductions come tax season.
+              Export a year of records as a PDF report or a CSV spreadsheet, with receipt images
+              included and every product itemized — both the package price difference and the
+              size-adjusted unit price difference.
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 {
   "state": "testflight",
-  "message": "Beta now available!",
-  "linkText": "Join the TestFlight beta.",
+  "message": "Build 8 is on TestFlight!",
+  "linkText": "Join the beta.",
   "link": "/beta.html"
 }

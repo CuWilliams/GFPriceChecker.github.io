@@ -1,3 +1,8 @@
+> **Archived — historical record.** These are the requirements the site was originally built
+> against in January 2026. They were met, and the site has changed considerably since. Kept as a
+> record of the original brief; it does not describe the site as it stands today. For current
+> documentation see [README.md](../../README.md) and [Claude.md](../../Claude.md).
+
 # GF PriceChecker Website - Technical Requirements Document
 
 **Version:** 1.0  

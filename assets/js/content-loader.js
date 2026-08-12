@@ -8,7 +8,7 @@
   'use strict';
 
   // Shorthand references to utility functions
-  const { fetchJSON, escapeHtml, formatDate, renderEmptyState, renderCard } = window.GFUtils;
+  const { fetchJSON, escapeHtml, formatDate, preserveLineBreaks, renderEmptyState, renderCard } = window.GFUtils;
 
   /**
    * Load and render status banner
@@ -97,10 +97,13 @@
 
     const sortedAnnouncements = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
     const latest = sortedAnnouncements[0];
+    const preview = latest.content.substring(0, 150);
+    const needsEllipsis = latest.content.length > 150;
+
     container.innerHTML = renderCard({
       title: latest.title,
       date: latest.date,
-      content: latest.content,
+      content: preview + (needsEllipsis ? '...' : ''),
       footer: { text: 'View All Announcements', url: '/announcements.html' }
     });
   }
@@ -128,7 +131,7 @@
     container.innerHTML = sortedAnnouncements.map(announcement => renderCard({
       title: announcement.title,
       date: announcement.date,
-      content: announcement.content,
+      contentHtml: preserveLineBreaks(announcement.content),
       className: 'mb-lg',
       titleTag: 'div'
     })).join('');

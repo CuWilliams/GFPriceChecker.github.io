@@ -2,16 +2,36 @@
   {
     "id": "1",
     "question": "What is GF PriceChecker?",
-    "answer": "GF PriceChecker is an iOS app designed to help Canadians track the price differential between gluten-free and regular products. This information is essential for claiming medical expense deductions on your Canadian tax return, as the CRA allows you to deduct the incremental cost of gluten-free products if you have celiac disease or gluten intolerance."
+    "answer": "GF PriceChecker is an iOS app that helps Canadians measure and document what eating gluten free actually costs. You capture a gluten-free product and its regular equivalent, and the app works out the difference in price — adjusted for the fact that the two packages are rarely the same size. It keeps the photographs and receipts that support each figure, and exports the whole year as a PDF or spreadsheet."
   },
   {
     "id": "2",
-    "question": "How does tracking price differentials help with tax deductions?",
-    "answer": "The Canada Revenue Agency (CRA) allows individuals with celiac disease or gluten intolerance to claim the incremental cost of gluten-free products as a medical expense. GF PriceChecker helps you accurately track and document these price differences, making it easier to calculate your eligible deductions and maintain records for your tax filing."
+    "question": "How does this relate to the Medical Expense Tax Credit?",
+    "answer": "For someone with celiac disease, the extra cost of gluten-free food is a medical expense, and Canada's Medical Expense Tax Credit recognizes the difference in price between a gluten-free product and its regular equivalent. Claiming it means keeping itemized records and producing them if asked. That record-keeping is what this app is for. It does not file anything, does not tell you what you are eligible to claim, and makes no claim of being approved or endorsed by any tax authority — what you do with your records is between you and your accountant. Worth knowing before you start: the credit only applies to medical expenses above a threshold of roughly three percent of your net income, so a modest year of gluten-free purchases may not reach it on its own."
   },
   {
     "id": "3",
+    "question": "Why compare unit prices instead of package prices?",
+    "answer": "Because gluten-free products don't only cost more — they often contain less, and comparing the sticker prices hides that. A $7.99 gluten-free loaf at 400g sitting beside a $3.99 regular loaf at 675g looks like a $4.00 difference. Compare them by cost per gram and scale the result back to the size you actually bought, and the real premium is $5.63. The app leads with that size-adjusted number everywhere and keeps the plain package difference beside it for reference."
+  },
+  {
+    "id": "4",
+    "question": "Do I have to enter the package size?",
+    "answer": "No. Size is optional. When you scan a shelf tag, the review screen walks you through three steps — name, price, then size — and there's a Skip Size button on the last one. Items without a size are still tracked and still show a package price difference; they're simply left out of the unit price totals, and the app tells you how many were excluded rather than quietly folding them in. You can enter size a few ways: type the package size directly, or enter the unit price posted on the shelf tag in cents or dollars and let the app work backwards from it."
+  },
+  {
+    "id": "5",
+    "question": "What does receipt verification do?",
+    "answer": "It ties what you recorded in the aisle to proof that you bought it. You pick the products from a shopping trip, scan the receipt, then go through them one at a time and tap the line on the receipt that matches each one. The app suggests a likely line to save you hunting. Confirmed products are marked verified and stay linked to that receipt image, which travels with them into your PDF and CSV exports. Products you haven't verified yet are listed separately in exports rather than mixed in with the rest."
+  },
+  {
+    "id": "6",
+    "question": "Where is my data stored?",
+    "answer": "On your device, and nowhere else. There are no accounts, no sign-in, and no cloud sync. Text recognition on shelf tags and receipts runs on the device itself, so your photographs are never uploaded anywhere. Backups are files you export and store wherever you choose — note that a backup file is not encrypted, so keep it somewhere you'd be comfortable keeping your receipts."
+  },
+  {
+    "id": "7",
     "question": "When will the app be available?",
-    "answer": "GF PriceChecker is currently in public beta on TestFlight. You can download and use the app now by visiting our Beta page for instructions and the TestFlight link. We're gathering feedback to refine the experience before the official App Store release. If you'd rather wait for the polished version, check back for announcements on the launch date."
+    "answer": "GF PriceChecker is in public beta on TestFlight now, and you can use it today — visit the Beta page for instructions and the link. It's free, with no ads, and it will stay that way on the App Store. Feedback from beta testers is actively shaping the app, so if something is confusing or wrong, please say so through TestFlight."
   }
 ]
