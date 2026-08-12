@@ -17,16 +17,25 @@ The site is a continuously deployed static site: every merge to `main` is live w
 
 Routine blog posts and announcements are content edits, not releases, and don't get tags.
 
-To cut a release: move the `[Unreleased]` entries below into a new version heading, then tag `main`.
+To cut a release: move the `[Unreleased]` entries below into a new version heading, then tag `main` and publish a matching GitHub Release so the two don't drift apart.
 
 ```
-git tag -a v1.2.0 -m "Short description of the release"
-git push origin v1.2.0
+git tag -a v1.3.0 -m "Short description of the release"
+git push origin v1.3.0
+gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <notes>
 ```
 
 ---
 
 ## [Unreleased]
+
+Nothing yet.
+
+---
+
+## [1.2.0] - 2026-08-12
+
+Content overhaul aligning the site with the app as it works today ([#11](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/11), [#13](https://github.com/CuWilliams/GFPriceChecker.github.io/pull/13)).
 
 ### Changed
 - Rewrote site copy to describe the app as it works today: unit price differential adjusted for
