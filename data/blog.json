@@ -1,5 +1,5 @@
 [
-  {
+{
   "id": "2025-12-24-why-this-matters",
   "date": "2025-12-24",
   "title": "Why This Matters",
@@ -84,16 +84,19 @@
   "content": "The latest instructional video is up on the site—reporting and exporting. This one shows what the whole thing is actually for: giving people a clean, CRA-ready document for their medical tax claim. All the price differentials, receipts, the works.\n\nI reached out to Celiac Canada hoping for some feedback. Nothing yet. But I'm pressing forward anyway. At minimum, there's one person in this country who's definitely going to use this app: me. I do the taxes in this household, so yeah—I've got a vested interest.\n\nTime to get this on the App Store. Beta first, obviously. Might regret it. We'll see.\n\nCurtis"
 },
 {
+  "id": "2026-01-25-beta-launch-almost-there",
   "date": "2026-01-25",
   "title": "Beta Launch: Almost There",
   "content": "So... the app's ready for beta. That's the version where people who don't mind the occasional rough edge get to try it before everyone else and tell me what's broken.\n\nIt's a necessary step. Theory meets practice and all that.\n\nApple's reviewing the TestFlight build now—should be approved in a day or two. Once that happens, I'll post a public link here along with instructions for getting it installed. The process involves downloading TestFlight (Apple's beta testing app), then using the link to grab GFPriceChecker.\n\nIf you've been following along and want to help test, you'll be able to jump in soon. If you'd rather wait for the polished version, no worries—that's coming after we work through whatever the beta testers find.\n\nOne step closer.\n\nCurtis"
 },
 {
+  "id": "2026-01-27-its-out-there",
   "date": "2026-01-27",
   "title": "It's Out There (Sort Of)",
   "content": "The beta's approved. If you want to try it, the link's on the beta page. Fair warning: the TestFlight installation process isn't exactly intuitive if you've never done it before.\n\nAnd once you get past that hurdle, the app itself is... functional. That's the honest assessment. It does what it's supposed to do—track price differentials, scan receipts, generate reports—but the polish isn't there yet. Some workflows aren't obvious. Some screens could be clearer.\n\nWhich is exactly why beta testing exists.\n\nIf you're jumping in, spend some time with it. Check the Features page on this site for an overview of what the app's supposed to do. Then use TestFlight's feedback tools to tell me what's confusing, what's broken, or what could be better. The good feedback is helpful. The critical feedback is more helpful.\n\nI can take it. Probably.\n\nCurtis"
 },
 {
+  "id": "2026-04-06-still-at-it",
   "date": "2026-04-06",
   "title": "Still At It",
   "content": "Two months in, and my wife has used the app over 60 times without a single crash. That's the headline, and I'll take it.\n\nThe OCR still has some quirks depending on the store—price capture isn't consistent everywhere, so layout recognition needs more work. That's on the list. But the bigger realization from two months of real use is this: package-to-package price comparison isn't enough. GF products don't just cost more—they often contain significantly less. So we're moving to unit pricing. Weight capture will become mandatory on every price entry. It's a more honest comparison, and honestly, it's a more useful one. When you're living with celiac disease, the cost adds up faster than most people realize. Every cent of that CRA deduction matters.\n\nAlso fixing the receipt verification scroll view—it's too small right now and makes finding your product in the OCR text more painful than it needs to be. That update should be out tomorrow.\n\nMore to come.\n\nCurtis"
@@ -103,6 +106,18 @@
   "date": "2026-04-12",
   "title": "Unit Pricing Is Now the Main Event",
   "content": "Build 4 is out for beta testing. Here's what changed.\n\nThe unit price differential is now the primary number everywhere in the app. Previously it was tucked away as a secondary figure—interesting but easy to miss. That didn't make sense. If you enter package sizes (and you should), the unit price comparison is the more accurate number. It accounts for the fact that a GF loaf of bread is often 400g while the regular version is 675g. Comparing the package prices directly is misleading. Comparing the cost per gram is honest.\n\nSo now the Tax Summary dashboard leads with Unit Price Differential Total in large green text. The old package-to-package number is still there, but labeled as Package Price Differential and shown for reference. Same change carried through to the Export screen, the PDF reports, the CSV exports, and everywhere else numbers appear. The chart legends are cleaner too—no more ambiguous \"Price Diff\" labels floating around.\n\nThe other thing I cleaned up: the app had references to the CRA and specific tax line numbers embedded in the UI. That was overstepping. This app tracks price differences—what you do with that information at tax time is between you and your accountant. The data is still formatted the same way, I just removed the agency branding from the interface.\n\nSmall things, but they matter. The app is clearer about what it's doing and why.\n\nCurtis"
+},
+{
+  "id": "2026-08-12-still-keeping-receipts",
+  "date": "2026-08-12",
+  "title": "Still Keeping Receipts",
+  "content": "Some news on the tax front, and it isn't the news anyone wanted.\n\nCeliac Canada put a petition in front of Parliament asking for a flat thousand-dollar refundable credit—no receipts, no shoebox, no spreadsheets. Thirty-three thousand Canadians signed it. In March the government answered, and the answer was no. The medical expense credit stays as it is, and Ottawa was specific about the receipts: you keep them, itemized, and you produce them if the CRA comes asking. So this app still has a job to do.\n\nTwo things I learned while reading through all of it. The credit only applies to medical expenses above a threshold—roughly three percent of your income. If your gluten-free difference for the year is modest and you've got no other medical costs, you may end up claiming nothing. Better to know that before you spend a year photographing shelf tags. The other thing: don't guess at what the regular product costs. You need proof of that price too, and you want the biggest, cheapest gluten equivalent you can find. Which is precisely why the app has you capture both tags and the size. A bit more work in the aisle, a lot more to stand on if you're ever audited.\n\nCeliac Canada isn't finished—they're back on Parliament Hill pushing for the fall budget. I hope they win. If they do, this app becomes unnecessary, and that would be a good day.\n\nCurtis"
+},
+{
+  "id": "2026-08-12-mandatory-in-theory",
+  "date": "2026-08-12",
+  "title": "Mandatory. In Theory.",
+  "content": "Four months since I've written anything here, which isn't the same as four months of doing nothing. Most of it went into one idea: unit price is now the number the app cares about. Not what the package cost—what it cost per hundred grams. That's the honest comparison when the gluten-free box holds two-thirds of what the regular one does, and it's now the headline figure in the lists, the dashboard, the PDF, the spreadsheet, everywhere.\n\nBack in April I said capturing the size would be mandatory on every entry. I've changed my mind on that. Testers were landing on a second screen partway through that they weren't expecting, so I rebuilt the review step as three plain ones—name, then price, then size. And I made the size optional. Skip it if you're in a hurry, and the app just tells you those items sat out of the unit-price totals. Being clear with people works better than blocking them.\n\nOne more thing worth mentioning. I found a bug where restoring a backup dropped the size data from every record—not what you want from the feature that's meant to keep your information safe. It's fixed, and it's a fair reminder of why this is still in beta.\n\nBuild 8 is on its way to TestFlight.\n\nCurtis"
 }
 ]
 
