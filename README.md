@@ -2,7 +2,7 @@
 
 The marketing and documentation website for **GF PriceChecker**, an iOS app that helps Canadians measure and document the price premium on gluten-free groceries.
 
-Live at [gfpricechecker.com](https://gfpricechecker.com). The app itself lives in a separate repository: [CuWilliams/GFPriceChecker](https://github.com/CuWilliams/GFPriceChecker).
+Live at [gfpricechecker.com](https://www.gfpricechecker.com). The app itself lives in a separate repository: [CuWilliams/GFPriceChecker](https://github.com/CuWilliams/GFPriceChecker).
 
 ## How the site is built
 

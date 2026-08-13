@@ -1,6 +1,6 @@
 # Changelog
 
-Release history for the **GF PriceChecker website** ([gfpricechecker.com](https://gfpricechecker.com)).
+Release history for the **GF PriceChecker website** ([gfpricechecker.com](https://www.gfpricechecker.com)).
 
 Changes to the iOS app are tracked separately in the [app repository](https://github.com/CuWilliams/GFPriceChecker).
 
@@ -29,7 +29,13 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
 
 ## [Unreleased]
 
-Nothing yet.
+### Fixed
+- Pointed every absolute URL at the canonical host, `https://www.gfpricechecker.com`
+  ([#14](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/14)). `CNAME` has held `www`
+  since June, but all 51 URLs in the markup and config used the bare apex, which 301-redirects — so
+  every self-referencing canonical, Open Graph and Twitter URL, JSON-LD entry, `sitemap.xml`
+  `<loc>`, and the `Sitemap:` line in `robots.txt` pointed at a redirect. The apex still redirects
+  to `www` as before; only the stated canonical changed.
 
 ---
 

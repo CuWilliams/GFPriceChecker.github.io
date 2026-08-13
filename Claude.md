@@ -352,6 +352,28 @@ PR). The static pages have no such prompt and are the ones that quietly rot — 
 Local-only storage, on-device text recognition, no accounts, no sync: all true, all worth saying.
 But backup files are **not** encrypted. Don't say they are.
 
+### Use the canonical host in every absolute URL
+
+**`https://www.gfpricechecker.com` is the canonical host.** `CNAME` is the source of truth for
+this, and it holds `www.gfpricechecker.com`. The bare apex `gfpricechecker.com` 301-redirects to
+`www` and should keep doing so — this is about matching the *stated* canonical to the *actual*
+one, not about dropping a hostname.
+
+Every absolute URL in the site's markup and config uses `www`: `<link rel="canonical">`, `og:url`,
+`og:image`, `twitter:url`, `twitter:image`, the JSON-LD `url` and `logo` in `index.html`, every
+`<loc>` in `sitemap.xml`, and the `Sitemap:` line in `robots.txt`. A self-referencing canonical
+that points at a redirect is an SEO smell, and a sitemap full of redirecting URLs reads as
+unmaintained.
+
+Before merging, sweep for the bare domain creeping back in:
+
+```
+grep -rn "https://gfpricechecker\.com" --include=*.html --include=*.xml --include=*.txt .
+```
+
+That should return nothing. Prose in `README.md` and `CHANGELOG.md` may show the bare domain as
+link *text* — the href underneath still has to be `www`.
+
 ---
 
 ## Outstanding Work
@@ -375,11 +397,6 @@ Both sections carry a `.media-note` saying so. Replacing them needs a device or 
 ### Videos have no captions
 No VTT track exists for any video. This was deferred at launch and is still open; it's the site's
 most significant remaining accessibility gap.
-
-### Canonical domain is inconsistent
-`CNAME` holds `www.gfpricechecker.com`, but every canonical link, Open Graph URL, JSON-LD entry,
-sitemap URL, and `robots.txt` reference uses the bare `gfpricechecker.com`. One of the two is wrong.
-Pick the canonical host, then sweep all of them to match.
 
 ### Legal review
 `privacy.html` and `terms.html` were revised on January 25 2026 and no longer carry placeholder
@@ -710,7 +727,7 @@ See [Outstanding Work](#outstanding-work) above for what remains.
 
 **Deployment Notes**:
 - GitHub Pages will serve from `main` branch root directory
-- Custom domain: gfpricechecker.com (CNAME file present)
+- Custom domain: www.gfpricechecker.com (CNAME file present); the bare apex 301s to it
 - SSL/TLS: Handled by GitHub Pages and Cloudflare
 - Analytics: Cloudflare Web Analytics (cookie-free, privacy-focused)
 - No server-side processing required (pure static site)
@@ -753,10 +770,10 @@ See [Outstanding Work](#outstanding-work) above for what remains.
 
 ---
 
-*Last Updated: August 12, 2026*
+*Last Updated: August 13, 2026*
 
-**Project Status**: Live at [gfpricechecker.com](https://gfpricechecker.com), serving an app in
-public TestFlight beta. The Phase 1–6 sections below the design and conventions material are a
-historical record of the January 2026 build, not a description of the site today. Outstanding items
-are listed under [Outstanding Work](#outstanding-work): media showing an older build, missing video
-captions, the `www` vs. bare-domain inconsistency, and legal review.
+**Project Status**: Live at [www.gfpricechecker.com](https://www.gfpricechecker.com), serving an
+app in public TestFlight beta. The Phase 1–6 sections below the design and conventions material are
+a historical record of the January 2026 build, not a description of the site today. Outstanding
+items are listed under [Outstanding Work](#outstanding-work): media showing an older build, missing
+video captions, and legal review.

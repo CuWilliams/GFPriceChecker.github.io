@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://gfpricechecker.com/sitemap.xml
+Sitemap: https://www.gfpricechecker.com/sitemap.xml
