@@ -249,31 +249,28 @@ Mobile-first approach with the following breakpoints:
 - ✅ Skip navigation link for screen readers
 - ✅ Semantic HTML5 landmarks (nav, main, footer)
 - ✅ ARIA labels where semantic HTML is insufficient
-- ✅ Alt text on all images (to be added with actual assets)
+- ✅ Alt text on all images
 
 ### Keyboard Shortcuts
 - **Tab**: Navigate through interactive elements
 - **Enter/Space**: Activate buttons and links
 - **Escape**: Close mobile menu
-- **Arrow Keys**: (Future) Navigate carousel
+- **Arrow Keys / Home / End**: Navigate carousel
 
 ---
 
 ## SEO Implementation
 
-### Current Implementation
 - ✅ Semantic HTML5 structure
 - ✅ Proper heading hierarchy (h1-h6)
 - ✅ Unique title and meta description
 - ✅ Open Graph tags (Facebook, LinkedIn)
 - ✅ Twitter Card tags
-- ✅ Canonical URLs
-
-### To Be Implemented (Phase 5)
-- ⏳ JSON-LD structured data (Organization, WebApplication schemas)
-- ⏳ sitemap.xml
-- ⏳ robots.txt
-- ⏳ Alt text on all images
+- ✅ Canonical URLs, pointing at the `www` host
+- ✅ JSON-LD structured data — Organization in `index.html`, MobileApplication in `features.html`
+- ✅ `sitemap.xml`, covering all eight pages
+- ✅ `robots.txt`
+- ✅ Alt text on all images
 
 ---
 
@@ -336,6 +333,13 @@ grep -rn "CRA\|Tax Compliant\|tax compliance\|Line 33099" --include=*.html --inc
 ```
 
 Every surviving hit should be explanatory context, never a claim about the app's output.
+
+**One standing exception: dated posts in `data/blog.json`.** The blog is a first-person record of
+what the app was at the time of writing, and it narrates its own corrections in sequence — the
+2026-01-24 post calls the exports "a clean, CRA-ready document," and the 2026-04-06 post is the
+author explaining that he pulled exactly that framing out of the app. Rewriting the earlier post
+would erase the change it exists to document. Leave dated entries as written; the rule binds the
+static pages, `faq.json`, `announcements.json`, and anything new.
 
 ### Describe the app as it currently works
 
@@ -469,6 +473,10 @@ built and the card has been removed rather than left promising something that is
 
 ## Phase 1 Completion Status
 
+> **Historical.** A record of the first build milestone in January 2026. Phase 2 followed
+> immediately and everything listed under it shipped; the section is kept for the build history,
+> not as a to-do list.
+
 ### ✅ Completed
 - Project folder structure
 - Base CSS with design tokens (DESIGN-SYSTEM.md compliant)
@@ -477,7 +485,7 @@ built and the card has been removed rather than left promising something that is
 - index.html with semantic HTML5, meta tags, placeholders
 - This documentation file (Claude.md)
 
-### ⏳ Next Steps (Phase 2)
+### ✅ Phase 2, which followed
 - Create JSON data files (status, announcements, FAQ)
 - Create content-loader.js to fetch and render JSON data
 - Update index.html to use content loader
