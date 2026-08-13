@@ -473,6 +473,10 @@ built and the card has been removed rather than left promising something that is
 
 ## Phase 1 Completion Status
 
+> **Historical.** A record of the first build milestone in January 2026. Phase 2 followed
+> immediately and everything listed under it shipped; the section is kept for the build history,
+> not as a to-do list.
+
 ### ✅ Completed
 - Project folder structure
 - Base CSS with design tokens (DESIGN-SYSTEM.md compliant)
@@ -481,7 +485,7 @@ built and the card has been removed rather than left promising something that is
 - index.html with semantic HTML5, meta tags, placeholders
 - This documentation file (Claude.md)
 
-### ⏳ Next Steps (Phase 2)
+### ✅ Phase 2, which followed
 - Create JSON data files (status, announcements, FAQ)
 - Create content-loader.js to fetch and render JSON data
 - Update index.html to use content loader
