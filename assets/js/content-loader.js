@@ -8,7 +8,7 @@
   'use strict';
 
   // Shorthand references to utility functions
-  const { fetchJSON, escapeHtml, formatDate, preserveLineBreaks, renderEmptyState, renderCard } = window.GFUtils;
+  const { fetchJSON, escapeHtml, formatDate, preserveLineBreaks, filterValidEntries, renderEmptyState, renderCard } = window.GFUtils;
 
   /**
    * Load and render status banner
@@ -55,7 +55,11 @@
 
     const data = await fetchJSON('/data/blog.json');
 
-    if (!data || !Array.isArray(data) || data.length === 0) {
+    // The "Read More" link is built from the id, so a post without one would
+    // send the home page's only call-to-action to a dead anchor.
+    const posts = filterValidEntries(data, ['id', 'date', 'title', 'content'], 'blog post');
+
+    if (posts.length === 0) {
       container.innerHTML = renderEmptyState({
         title: 'No Blog Posts Yet',
         description: 'Check back soon for development updates and insights.',
@@ -64,7 +68,7 @@
       return;
     }
 
-    const sortedPosts = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+    const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
     const latest = sortedPosts[0];
     const preview = latest.content.substring(0, 150);
     const needsEllipsis = latest.content.length > 150;
@@ -86,7 +90,9 @@
 
     const data = await fetchJSON('/data/announcements.json');
 
-    if (!data || !Array.isArray(data) || data.length === 0) {
+    const announcements = filterValidEntries(data, ['date', 'title', 'content'], 'announcement');
+
+    if (announcements.length === 0) {
       container.innerHTML = renderEmptyState({
         title: 'No Announcements Yet',
         description: 'Check back soon for news and updates about GF PriceChecker.',
@@ -95,7 +101,7 @@
       return;
     }
 
-    const sortedAnnouncements = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+    const sortedAnnouncements = [...announcements].sort((a, b) => new Date(b.date) - new Date(a.date));
     const latest = sortedAnnouncements[0];
     const preview = latest.content.substring(0, 150);
     const needsEllipsis = latest.content.length > 150;
@@ -117,7 +123,9 @@
 
     const data = await fetchJSON('/data/announcements.json');
 
-    if (!data || !Array.isArray(data) || data.length === 0) {
+    const announcements = filterValidEntries(data, ['date', 'title', 'content'], 'announcement');
+
+    if (announcements.length === 0) {
       container.innerHTML = renderEmptyState({
         title: 'No Announcements Yet',
         description: 'Check back soon for news and updates about GF PriceChecker.',
@@ -126,7 +134,7 @@
       return;
     }
 
-    const sortedAnnouncements = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+    const sortedAnnouncements = [...announcements].sort((a, b) => new Date(b.date) - new Date(a.date));
 
     container.innerHTML = sortedAnnouncements.map(announcement => renderCard({
       title: announcement.title,
@@ -146,7 +154,11 @@
 
     const data = await fetchJSON('/data/faq.json');
 
-    if (!data || !Array.isArray(data) || data.length === 0) {
+    // The id ties each accordion button to its content panel, so an entry
+    // without one would collide with every other id-less entry.
+    const faqs = filterValidEntries(data, ['id', 'question', 'answer'], 'FAQ entry');
+
+    if (faqs.length === 0) {
       container.innerHTML = renderEmptyState({
         title: 'No FAQs Yet',
         description: 'Frequently asked questions will appear here soon.',
@@ -157,7 +169,7 @@
 
     container.innerHTML = `
       <div class="accordion">
-        ${data.map(faq => `
+        ${faqs.map(faq => `
           <div class="accordion-item">
             <h3 class="accordion-header">
               <button class="accordion-button"

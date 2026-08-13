@@ -29,7 +29,22 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
 
 ## [Unreleased]
 
+### Added
+- `scripts/validate-data.js`, a dependency-free schema check for the hand-edited files under
+  `data/`, wired to a `Validate Data Files` workflow that runs on every push and pull request to
+  `main` ([#12](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/12)). It asserts the
+  required fields on every blog post, announcement, and FAQ entry, rejects duplicate and
+  anchor-unsafe `id` values, requires real `YYYY-MM-DD` dates, and validates the status banner's
+  state and link fields.
+
 ### Fixed
+- Dropped `starttls: true` from the blog reminder workflow. `dawidd6/action-send-mail` has no such
+  input, so it was being passed and ignored; STARTTLS on port 587 comes from leaving `secure`
+  unset, which is already the case. No change in behaviour.
+- The loaders now skip data entries missing the fields they need to render, warning in the console,
+  instead of interpolating `undefined` into the page. A blog post without an `id` previously left
+  the home page's "Read More" link pointing at `#post-undefined` — a dead anchor that rendered
+  perfectly and reported nothing.
 - Pointed every absolute URL at the canonical host, `https://www.gfpricechecker.com`
   ([#14](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/14)). `CNAME` has held `www`
   since June, but all 51 URLs in the markup and config used the bare apex, which 301-redirects — so

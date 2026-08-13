@@ -79,9 +79,11 @@ This project follows **DESIGN-SYSTEM.md** guidelines:
 │   ├── announcements.json      # News and updates
 │   ├── blog.json               # Developer blog posts
 │   └── faq.json                # Frequently asked questions
-└── components/                 # Reusable HTML components
-    ├── navbar.html             # Navigation bar
-    └── footer.html             # Footer
+├── components/                 # Reusable HTML components
+│   ├── navbar.html             # Navigation bar
+│   └── footer.html             # Footer
+└── scripts/
+    └── validate-data.js        # Schema check for data/*.json, run in CI
 ```
 
 ---
@@ -373,6 +375,27 @@ grep -rn "https://gfpricechecker\.com" --include=*.html --include=*.xml --includ
 
 That should return nothing. Prose in `README.md` and `CHANGELOG.md` may show the bare domain as
 link *text* — the href underneath still has to be `www`.
+### Validate the data files after editing them
+
+`data/*.json` is hand-edited and rendered client-side, which means a missing field produces no
+error anywhere — `undefined` interpolates into a template string quite happily, the page still
+renders, and the only symptom is a link that goes nowhere. Three blog posts shipped without an
+`id` that way, each leaving the home page's only call-to-action pointing at `#post-undefined`
+for weeks.
+
+So after touching any file under `data/`:
+
+```
+node scripts/validate-data.js
+```
+
+Zero dependencies, and CI runs the same command on every push and pull request to `main`
+(`.github/workflows/validate-data.yml`). It enforces required fields on blog posts, announcements,
+and FAQ entries; unique, anchor-safe `id` values; real `YYYY-MM-DD` dates; and the status banner's
+allowed states. Adding a field to a data file means adding it to `LIST_SCHEMAS` in that script.
+
+The loaders also skip entries missing the fields they render — `GFUtils.filterValidEntries` — but
+that's a backstop that hides content, not a substitute for the check.
 
 ---
 

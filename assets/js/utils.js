@@ -78,6 +78,34 @@
   }
 
   /**
+   * Drop entries that are missing a required field, warning about each one.
+   *
+   * scripts/validate-data.js enforces the same contract in CI and is the real
+   * safeguard; this is the runtime backstop, so a half-written entry that
+   * reaches the browser is left out rather than rendered as "undefined".
+   *
+   * @param {Array} items - Parsed entries from a data file
+   * @param {string[]} requiredFields - Fields that must be non-empty strings
+   * @param {string} label - Name used in the console warning, e.g. "blog post"
+   * @returns {Array} Entries that have every required field
+   */
+  function filterValidEntries(items, requiredFields, label) {
+    if (!Array.isArray(items)) return [];
+
+    return items.filter(function(item, index) {
+      const missing = requiredFields.filter(function(field) {
+        return !item || typeof item[field] !== 'string' || item[field].trim() === '';
+      });
+
+      if (missing.length > 0) {
+        console.warn(`Skipping ${label} at index ${index}: missing ${missing.join(', ')}`);
+        return false;
+      }
+      return true;
+    });
+  }
+
+  /**
    * SVG icon paths for empty states
    */
   const ICONS = {
@@ -172,6 +200,7 @@
     escapeHtml: escapeHtml,
     preserveLineBreaks: preserveLineBreaks,
     formatDate: formatDate,
+    filterValidEntries: filterValidEntries,
     renderEmptyState: renderEmptyState,
     renderCard: renderCard,
     ICONS: ICONS

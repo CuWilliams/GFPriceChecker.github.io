@@ -8,7 +8,7 @@
   'use strict';
 
   // Shorthand references to utility functions
-  const { fetchJSON, preserveLineBreaks, renderEmptyState, renderCard } = window.GFUtils;
+  const { fetchJSON, preserveLineBreaks, filterValidEntries, renderEmptyState, renderCard } = window.GFUtils;
 
   /**
    * Load and render full blog posts list
@@ -19,7 +19,11 @@
 
     const data = await fetchJSON('/data/blog.json');
 
-    if (!data || !Array.isArray(data) || data.length === 0) {
+    // A post still reads fine without an id — it just can't be linked to — so
+    // the id is left off the card rather than dropping the post entirely.
+    const posts = filterValidEntries(data, ['date', 'title', 'content'], 'blog post');
+
+    if (posts.length === 0) {
       container.innerHTML = renderEmptyState({
         title: 'No Blog Posts Yet',
         description: 'Check back soon for development updates and insights from the GF PriceChecker team.',
@@ -28,13 +32,13 @@
       return;
     }
 
-    const sortedPosts = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+    const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
 
     container.innerHTML = sortedPosts.map(post => renderCard({
       title: post.title,
       date: post.date,
       contentHtml: preserveLineBreaks(post.content),
-      id: `post-${post.id}`,
+      id: post.id ? `post-${post.id}` : undefined,
       className: 'mb-lg',
       titleTag: 'h2'
     })).join('');

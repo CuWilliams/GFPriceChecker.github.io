@@ -19,8 +19,9 @@ jobs:
           # SMTP server configuration (iCloud Mail)
           server_address: smtp.mail.me.com
           server_port: 587
-          # Use STARTTLS for port 587 (not immediate SSL)
-          starttls: true
+          # No `starttls` input exists on this action. Leaving `secure` unset is
+          # what selects STARTTLS: the action opens an immediate TLS connection
+          # only for port 465, and on 587 connects in plaintext and upgrades.
 
           # Authentication (uses repository secrets)
           username: ${{ secrets.SMTP_USERNAME }}

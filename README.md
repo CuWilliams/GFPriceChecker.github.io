@@ -34,6 +34,8 @@ Two ideas do most of the work:
 │   ├── images/                # logos, favicon, OG image, screenshots/, video posters
 │   └── video/                 # walkthrough videos (keep under 50MB each)
 │
+├── scripts/                   # validate-data.js — schema check for data/, run in CI
+│
 ├── Documents/archive/         # Historical build plans from the site's construction
 ├── CHANGELOG.md               # Site release history
 ├── DESIGN-SYSTEM.md           # Design tokens and component reference
@@ -71,13 +73,15 @@ Separate paragraphs with `\n\n`. Content is escaped before rendering, so write p
 
 **The status banner** — `data/status.json` drives the banner on every page. Each page also hardcodes a matching fallback so the banner still reads correctly before JavaScript runs; if you change the state here, update those fallbacks too.
 
-After editing any data file, confirm it still parses:
+After editing any data file, validate it:
 
 ```
-for f in data/*.json; do python3 -m json.tool "$f" > /dev/null && echo "OK $f"; done
+node scripts/validate-data.js
 ```
 
-A malformed file fails silently in the browser and renders an empty state.
+That checks every file parses, that each entry has its required fields as non-empty strings, that `id` values are unique and safe to use as URL anchors, and that dates are real `YYYY-MM-DD` calendar dates. It runs in CI on every push and pull request to `main` (`.github/workflows/validate-data.yml`) and needs no dependencies beyond Node.
+
+The check exists because these failures are otherwise invisible: a malformed file renders an empty state in the browser with no error, and a missing `id` renders a post that looks fine while the home page's "Read More" link points at `#post-undefined`. The loaders now skip entries missing the fields they need, and say so in the console — but that is a backstop, not the check.
 
 ## Writing conventions
 
