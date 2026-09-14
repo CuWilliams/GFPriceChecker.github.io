@@ -87,6 +87,8 @@ The check exists because these failures are otherwise invisible: a malformed fil
 
 The app deliberately carries no Canada Revenue Agency branding in its interface — tracking price differences is the app's job, and what a user does with those records at tax time is between them and their accountant. **The site follows the same rule.** Explain the Medical Expense Tax Credit as context for why the app exists, but don't describe the app's output as CRA-compliant, approved, or endorsed, and don't promise anyone a deduction.
 
+That rule is not this repo's to change. It lives in [`gfpricechecker/CONTENT_CONVENTIONS.md`](https://github.com/CuWilliams/shared-docs/blob/main/gfpricechecker/CONTENT_CONVENTIONS.md) in the shared-docs repo, which governs this site, the iOS app, and any future Android app — along with the shared vocabulary and the platform-independent product definition. It is repeated here because it is legal exposure, not because this is where it is decided.
+
 Beyond that, see [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md) for design tokens and component patterns, and [Claude.md](Claude.md) for the fuller set of working notes.
 
 ## Releases

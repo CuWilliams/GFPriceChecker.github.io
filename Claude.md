@@ -314,12 +314,24 @@ Dynamic content will be managed via JSON files in `/data/`:
 
 ## Content Conventions
 
+**The product-wide rules live in
+[`gfpricechecker/CONTENT_CONVENTIONS.md`](https://github.com/CuWilliams/shared-docs/blob/main/gfpricechecker/CONTENT_CONVENTIONS.md)
+in the shared-docs repo**, which governs this site, the iOS app, and any future Android app.
+Change them there, not here. The shared repo also holds
+[`PRODUCT_DEFINITION.md`](https://github.com/CuWilliams/shared-docs/blob/main/gfpricechecker/PRODUCT_DEFINITION.md)
+— the data model, the differential arithmetic and the export formats — which is the reference when
+copy needs to describe how the app actually computes something.
+
+The sections below are the short version of the shared rules, plus the parts that are specific to
+this site. The tax-compliance rule is repeated rather than merely linked because it is legal
+exposure, and you should not have to open another repo to find out about it.
+
 ### Don't claim tax compliance
 
 The app deliberately carries no Canada Revenue Agency branding in its interface. Agency references
 and specific tax line numbers were stripped out in April 2026 — tracking price differences is what
 the app does, and what a user does with those records at tax time is between them and their
-accountant. **The site follows the same rule.**
+accountant. **The site follows the same rule**, and has since v1.2.0 removed this class of claim.
 
 - Explain the Medical Expense Tax Credit as context for why the app exists. That's fair and useful.
 - Never describe the app's exports as CRA-compliant, approved, accepted, or endorsed.
@@ -328,8 +340,10 @@ accountant. **The site follows the same rule.**
 
 Before merging copy changes, sweep for regressions:
 
-```
-grep -rn "CRA\|Tax Compliant\|tax compliance\|Line 33099" --include=*.html --include=*.json .
+```bash
+# Quote the --include patterns: zsh expands them as globs otherwise.
+grep -rn "CRA\|Tax Compliant\|tax compliance\|Line 33099" \
+  --include='*.html' --include='*.json' .
 ```
 
 Every surviving hit should be explanatory context, never a claim about the app's output.
@@ -356,7 +370,11 @@ PR). The static pages have no such prompt and are the ones that quietly rot — 
 ### Don't overclaim on privacy either
 
 Local-only storage, on-device text recognition, no accounts, no sync: all true, all worth saying.
-But backup files are **not** encrypted. Don't say they are.
+But backup files are **not** encrypted, and neither is the stored tax ID. Don't say they are.
+
+The full posture, including what is *not* covered, is in the shared
+[`CONTENT_CONVENTIONS.md`](https://github.com/CuWilliams/shared-docs/blob/main/gfpricechecker/CONTENT_CONVENTIONS.md)
+§4. If the app's posture changes, that file changes first.
 
 ### Use the canonical host in every absolute URL
 
