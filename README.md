@@ -99,7 +99,7 @@ Site releases are annotated git tags on `main`, with history in [CHANGELOG.md](C
 
 - **X (Twitter):** [@CurtisWill3z](https://x.com/CurtisWill3z)
 - **LinkedIn:** [Curtis Williams](https://www.linkedin.com/in/curtis-williams-154382b3)
-- **Email:** gfpricechecker@gmail.com
+- **Email:** support@gfpricechecker.com
 
 ## License
 
