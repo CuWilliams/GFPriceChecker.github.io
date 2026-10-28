@@ -29,6 +29,14 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
 
 ## [Unreleased]
 
+### Changed
+- The public contact address is now `support@gfpricechecker.com`, replacing
+  `gfpricechecker@gmail.com` everywhere it appeared: the footer, the home page's JSON-LD `email`,
+  the "Email Us" buttons on the FAQ and beta pages, the contact sections of the privacy policy and
+  terms, and the README
+  ([CuWilliams/GFPriceChecker#62](https://github.com/CuWilliams/GFPriceChecker/issues/62)). The app's
+  Contact Support link moves to the same address in the same change.
+
 ### Added
 - `scripts/validate-data.js`, a dependency-free schema check for the hand-edited files under
   `data/`, wired to a `Validate Data Files` workflow that runs on every push and pull request to
