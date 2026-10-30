@@ -17,7 +17,7 @@
   {
     "id": "4",
     "question": "Do I have to enter the package size?",
-    "answer": "No. Size is optional. When you scan a shelf tag, the review screen walks you through three steps — name, price, then size — and there's a Skip Size button on the last one. Items without a size are still tracked and still show a package price difference; they're simply left out of the unit price totals, and the app tells you how many were excluded rather than quietly folding them in. You can enter size a few ways: type the package size directly, or enter the unit price posted on the shelf tag in cents or dollars and let the app work backwards from it."
+    "answer": "No. Size is optional. When you scan a shelf tag, the review screen walks you through three steps — name, price, then size — and there's a Skip Size button on the last one. Items without a size are still tracked and still show a package price difference; they're simply left out of the size-adjusted totals, and the app tells you how many were excluded rather than quietly folding them in. You can enter size a few ways: type the package size directly, or enter the unit price posted on the shelf tag in cents or dollars and let the app work backwards from it."
   },
   {
     "id": "5",

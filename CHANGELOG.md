@@ -30,6 +30,12 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
 ## [Unreleased]
 
 ### Changed
+- The headline figure is now called the **size-adjusted differential**, matching the app's build 11
+  rename ([CuWilliams/GFPriceChecker#66](https://github.com/CuWilliams/GFPriceChecker/issues/66)).
+  The features page, home page, FAQ and beta page called it a "unit price differential" or
+  "unit price totals", which reads as a price per gram; it is a dollar amount per package. Card
+  titles that describe the method ("Unit Price Comparison") stay, and dated blog posts and
+  announcements are left as written.
 - The public contact address is now `support@gfpricechecker.com`, replacing
   `gfpricechecker@gmail.com` everywhere it appeared: the footer, the home page's JSON-LD `email`,
   the "Email Us" buttons on the FAQ and beta pages, the contact sections of the privacy policy and
