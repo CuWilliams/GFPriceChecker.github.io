@@ -447,12 +447,22 @@ pipeline covers.
   since rewritten, including "Generate professional reports for CRA tax filing", a claim the
   copy sweep can't find because it's in an image. Text in a screenshot falls under the same
   content rules as text in the HTML. Look at every image before it goes in.
-- **The three walkthrough videos** were recorded January 17–24 2026, before unit pricing became
-  the headline figure (April 2026) and before the three-step capture review (July 2026). The
-  pipeline records silent portrait takes of all three. Turning them into the site's 1920×1080
-  videos with audio is its Stage 7, so the files here wait for that. Both sections carry a
-  `.media-note`; update it as files are replaced.
-- Keep video files under 50MB. `receipt-management.mp4` is already at 49MB.
+- **The three walkthrough videos** were replaced in October 2026 by the app's scripted
+  pipeline (GFPriceChecker #45, `Tools/Demo/site.sh`). They are 1920×1080 at 60 fps, with
+  the captions burned in and a silent audio track. The hand-recorded originals were silent
+  too. They come to 1–2 MB each, so regenerating them per build costs the repo little. The
+  videos section's `.media-note` went with them, and the screenshots section keeps its own.
+- **The video posters** were redrawn at the same time, at 1920×1080 to match the videos. Each
+  one shows the app's GF monogram icon (`docs/brand/` in the app repo) over its video's title.
+  The old posters carried the retired wordmark, and one carried the tagline "Generate CRA-Ready
+  Tax Reports", which the copy sweep could not find because it was in an image.
+- **The logo assets** in `assets/images/logos/`, `favicon.png` and `og-image.png` were redrawn
+  from the same icon master at the same time. `logo.svg` is the icon with its corners rounded,
+  and `logo-minimal.svg` is the mark without its tile. The Open Graph card's old copy ("Compare,
+  Save, Claim … simplify your Canadian tax deductions") promised a deduction. It now carries
+  the name and "Track what gluten-free products really cost", from the pages' own
+  `og:description`. `og-image-original.png`, an unused copy of the old card, was deleted.
+- Keep video files under 50MB. The app's `composite.py` fails on one that size.
 
 ### Videos have no captions
 No VTT track exists for any video. This was deferred at launch and is still open; it's the site's
