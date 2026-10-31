@@ -456,6 +456,12 @@ pipeline covers.
   one shows the app's GF monogram icon (`docs/brand/` in the app repo) over its video's title.
   The old posters carried the retired wordmark, and one carried the tagline "Generate CRA-Ready
   Tax Reports", which the copy sweep could not find because it was in an image.
+- **The logo assets** in `assets/images/logos/`, `favicon.png` and `og-image.png` were redrawn
+  from the same icon master at the same time. `logo.svg` is the icon with its corners rounded,
+  and `logo-minimal.svg` is the mark without its tile. The Open Graph card's old copy ("Compare,
+  Save, Claim … simplify your Canadian tax deductions") promised a deduction. It now carries
+  the name and "Track what gluten-free products really cost", from the pages' own
+  `og:description`. `og-image-original.png`, an unused copy of the old card, was deleted.
 - Keep video files under 50MB. The app's `composite.py` fails on one that size.
 
 ### Videos have no captions
