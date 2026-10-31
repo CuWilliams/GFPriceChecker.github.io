@@ -30,6 +30,13 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
 ## [Unreleased]
 
 ### Changed
+- Screenshots 08, 10 and 14 (pair review, receipt verification, Reports dashboard) now show
+  the current build. They come from the app's scripted demo pipeline
+  ([CuWilliams/GFPriceChecker#44](https://github.com/CuWilliams/GFPriceChecker/issues/44)),
+  cut from the same scripts as the coming walkthrough videos, and are about half the size of
+  the files they replace. The carousel's media note now says which screenshots are current.
+- Carousel screenshots have descriptive alt text in place of "GF PriceChecker screenshot N",
+  and every slide's path is root-relative.
 - The headline figure is now called the **size-adjusted differential**, matching the app's build 11
   rename ([CuWilliams/GFPriceChecker#66](https://github.com/CuWilliams/GFPriceChecker/issues/66)).
   The features page, home page, FAQ and beta page called it a "unit price differential" or
@@ -50,6 +57,11 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
   required fields on every blog post, announcement, and FAQ entry, rejects duplicate and
   anchor-unsafe `id` values, requires real `YYYY-MM-DD` dates, and validates the status banner's
   state and link fields.
+
+### Removed
+- Carousel screenshots 02 and 03, two onboarding screens from January 2026. The app has since
+  rewritten both, and screenshot 03 read "Generate professional reports for CRA tax filing",
+  the kind of claim v1.2.0 removed from the site's copy. The carousel is now twelve slides.
 
 ### Fixed
 - Dropped `starttls: true` from the blog reminder workflow. `dawidd6/action-send-mail` has no such

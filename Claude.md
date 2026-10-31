@@ -431,16 +431,28 @@ screenshots, and videos — were all resolved during January 2026, and every pag
 original build now exists (plus `beta.html` and `blog.html`, which came later). What follows is
 what's actually outstanding.
 
-### Media is out of date
-The three walkthrough videos were recorded January 17–24 2026 and the majority of the carousel
-screenshots on January 3. Both predate the move to unit pricing as the headline figure (April 2026)
-and the rebuilt three-step capture review (July 2026), so they show screens that no longer exist.
-Both sections carry a `.media-note` saying so. Replacing them needs a device or simulator session:
+### Media is partly out of date
+The app repo now generates the site's media from scripts the app plays against itself
+(`Tools/Demo/` in CuWilliams/GFPriceChecker, `docs/SCRIPTED_DEMO_PIPELINE.md`), so a new build
+regenerates it instead of needing a re-shoot. Don't hand-capture replacements for anything that
+pipeline covers.
 
-- Re-record the three walkthroughs against the current build.
-- Re-capture screenshots 08–14 (capture flow, receipt views, product detail, list, export,
-  dashboard).
-- Keep video files under 50MB — `receipt-management.mp4` is already at 49MB.
+- **Screenshots 08, 10 and 14** (pair review, receipt verification, Reports dashboard) are the
+  pipeline's, cut by `Tools/Demo/stills.sh` and copied over their namesakes. Re-run it and copy
+  again after a build changes those screens. Keep the file names: the script writes them.
+- **Screenshots 09, 11, 12 and 13** (receipt detail, product detail, Library, export) are from
+  January 3 2026, and the product screens lead with the package price difference. They need
+  storyboard marks in the app before the pipeline can cut them.
+- **Screenshots 02 and 03 were removed** in October 2026. They showed onboarding copy the app had
+  since rewritten, including "Generate professional reports for CRA tax filing", a claim the
+  copy sweep can't find because it's in an image. Text in a screenshot falls under the same
+  content rules as text in the HTML. Look at every image before it goes in.
+- **The three walkthrough videos** were recorded January 17–24 2026, before unit pricing became
+  the headline figure (April 2026) and before the three-step capture review (July 2026). The
+  pipeline records silent portrait takes of all three. Turning them into the site's 1920×1080
+  videos with audio is its Stage 7, so the files here wait for that. Both sections carry a
+  `.media-note`; update it as files are replaced.
+- Keep video files under 50MB. `receipt-management.mp4` is already at 49MB.
 
 ### Videos have no captions
 No VTT track exists for any video. This was deferred at launch and is still open; it's the site's
