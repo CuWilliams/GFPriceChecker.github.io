@@ -317,6 +317,12 @@
   text-align: center;
 }
 
+/* Holds the banner's line while status.json loads, so the page doesn't jump when
+   it fills in. content-loader.js replaces the class, or hides the banner on failure. */
+.status-banner-pending {
+  visibility: hidden;
+}
+
 .status-banner-coming-soon {
   background-color: var(--light-gray);
   color: var(--black);

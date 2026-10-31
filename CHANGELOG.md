@@ -34,6 +34,13 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
   retired wordmark, matching the app's change in
   [CuWilliams/GFPriceChecker#100](https://github.com/CuWilliams/GFPriceChecker/issues/100).
   The carousel's media note now counts it among the current screenshots.
+- The status banner reads "Build 11 is on TestFlight!" It still said build 8.
+- The status banner's text lives only in `data/status.json`. Six pages each carried a hardcoded
+  fallback ("Beta Testing! Join our TestFlight beta program.") for before JavaScript ran, which
+  had to be edited by hand alongside it and had already drifted once ("Coming Soon!" on five of
+  six pages). Each page now holds an empty placeholder that keeps the banner's line while the
+  file loads, so the page doesn't jump, and the banner is hidden if the file fails to load
+  ([#18](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/18)).
 
 ## [1.3.0] - 2026-10-31
 

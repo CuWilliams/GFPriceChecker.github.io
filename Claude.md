@@ -189,7 +189,9 @@ Functions are exposed to `window` object for reinitialization after dynamic comp
 **Purpose:** Loads dynamic content from JSON data files
 
 **Functions:**
-- `loadStatusBanner()`: Updates status banner from status.json
+- `loadStatusBanner()`: Fills the status banner from status.json, the only copy of its text.
+  Each page's `#status-banner` is an empty `.status-banner-pending` placeholder that holds the
+  line while it loads; on failure the banner is hidden
 - `loadLatestBlogPost()`: Shows most recent blog post on homepage
 - `loadLatestAnnouncement()`: Shows most recent announcement on homepage
 - `loadAnnouncementsList()`: Renders all announcements
