@@ -458,7 +458,9 @@ pipeline covers.
   Tax Reports", which the copy sweep could not find because it was in an image.
 - **The logo assets** in `assets/images/logos/`, `favicon.png` and `og-image.png` were redrawn
   from the same icon master at the same time. `logo.svg` is the icon with its corners rounded,
-  and `logo-minimal.svg` is the mark without its tile. The Open Graph card's old copy ("Compare,
+  and is what the navbar and JSON-LD use. Every page links `apple-touch-icon.png`, and
+  `favicon.ico` sits at the site root, where browsers ask for it unprompted. The unused
+  `favicon-32.png`, `logo-512.png` and `logo-minimal.svg` were deleted (#19). The Open Graph card's old copy ("Compare,
   Save, Claim … simplify your Canadian tax deductions") promised a deduction. It now carries
   the name and "Track what gluten-free products really cost", from the pages' own
   `og:description`. `og-image-original.png`, an unused copy of the old card, was deleted.
