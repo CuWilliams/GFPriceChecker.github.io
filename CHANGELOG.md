@@ -29,6 +29,12 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
 
 ## [Unreleased]
 
+### Changed
+- The launch screen screenshot (carousel slide 1) shows the app's GF monogram in place of the
+  retired wordmark, matching the app's change in
+  [CuWilliams/GFPriceChecker#100](https://github.com/CuWilliams/GFPriceChecker/issues/100).
+  The carousel's media note now counts it among the current screenshots.
+
 ## [1.3.0] - 2026-10-31
 
 New walkthrough videos from the app's scripted demo pipeline, and the app's GF monogram across the site ([#19](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/19), [#25](https://github.com/CuWilliams/GFPriceChecker.github.io/pull/25)).

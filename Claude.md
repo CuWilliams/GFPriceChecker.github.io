@@ -440,6 +440,12 @@ pipeline covers.
 - **Screenshots 08, 10 and 14** (pair review, receipt verification, Reports dashboard) are the
   pipeline's, cut by `Tools/Demo/stills.sh` and copied over their namesakes. Re-run it and copy
   again after a build changes those screens. Keep the file names: the script writes them.
+- **Screenshot 01** (launch screen) was hand-captured in October 2026 from the iPhone 17 Pro
+  Simulator after the app swapped its wordmark for the GF monogram
+  ([CuWilliams/GFPriceChecker#100](https://github.com/CuWilliams/GFPriceChecker/issues/100)).
+  The pipeline doesn't cut it: scripted takes replace the launch screen with a flat curtain. To
+  redo it, cold-launch the app with `xcrun simctl launch`, take `xcrun simctl io … screenshot`
+  inside the 1.5 s hold, and scale to 800 px wide as a JPEG.
 - **Screenshots 09, 11, 12 and 13** (receipt detail, product detail, Library, export) are from
   January 3 2026, and the product screens lead with the package price difference. They need
   storyboard marks in the app before the pipeline can cut them.
