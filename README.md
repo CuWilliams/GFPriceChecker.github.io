@@ -71,7 +71,7 @@ Separate paragraphs with `\n\n`. Content is escaped before rendering, so write p
 
 **An FAQ entry** — `data/faq.json`, with `id`, `question`, and `answer`. These render as an accordion in file order.
 
-**The status banner** — `data/status.json` drives the banner on every page. Each page also hardcodes a matching fallback so the banner still reads correctly before JavaScript runs; if you change the state here, update those fallbacks too.
+**The status banner** — `data/status.json` drives the banner on every page, and is the only place its text lives. Each page holds an empty placeholder that keeps the banner's line while the file loads; if it fails to load, the banner is hidden rather than showing stale text.
 
 After editing any data file, validate it:
 
