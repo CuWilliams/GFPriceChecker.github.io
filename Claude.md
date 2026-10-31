@@ -452,6 +452,10 @@ pipeline covers.
   the captions burned in and a silent audio track. The hand-recorded originals were silent
   too. They come to 1–2 MB each, so regenerating them per build costs the repo little. The
   videos section's `.media-note` went with them, and the screenshots section keeps its own.
+- **The video posters** were redrawn at the same time, at 1920×1080 to match the videos. Each
+  one shows the app's GF monogram icon (`docs/brand/` in the app repo) over its video's title.
+  The old posters carried the retired wordmark, and one carried the tagline "Generate CRA-Ready
+  Tax Reports", which the copy sweep could not find because it was in an image.
 - Keep video files under 50MB. The app's `composite.py` fails on one that size.
 
 ### Videos have no captions
