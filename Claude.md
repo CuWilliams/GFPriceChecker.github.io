@@ -357,8 +357,11 @@ static pages, `faq.json`, `announcements.json`, and anything new.
 
 ### Describe the app as it currently works
 
-The headline metric is the **unit price differential** — cost per unit, scaled back to the size
-actually purchased — not the package-to-package difference, which is kept beside it for reference.
+The headline metric is the **size-adjusted differential** — the cost-per-unit gap, scaled back to
+the size actually purchased — not the package-to-package difference, which is kept beside it for
+reference. It is a dollar amount per package, so don't call it a "unit price differential", which
+is what the app labelled it until build 11. Comparing *by unit price* is still the right way to
+describe the method.
 Copy that leads with package price is out of date. Likewise, capturing a product is a single review
 screen with three steps (name, price, size), and **size is optional**. Don't describe it as
 mandatory or as a separate screen.
