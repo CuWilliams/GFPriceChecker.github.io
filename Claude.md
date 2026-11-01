@@ -441,24 +441,32 @@ screenshots, and videos — were all resolved during January 2026, and every pag
 original build now exists (plus `beta.html` and `blog.html`, which came later). What follows is
 what's actually outstanding.
 
-### Media is partly out of date
-The app repo now generates the site's media from scripts the app plays against itself
+### Media
+The app repo generates the site's media from scripts the app plays against itself
 (`Tools/Demo/` in CuWilliams/GFPriceChecker, `docs/SCRIPTED_DEMO_PIPELINE.md`), so a new build
 regenerates it instead of needing a re-shoot. Don't hand-capture replacements for anything that
 pipeline covers.
 
-- **Screenshots 08, 10 and 14** (pair review, receipt verification, Reports dashboard) are the
-  pipeline's, cut by `Tools/Demo/stills.sh` and copied over their namesakes. Re-run it and copy
-  again after a build changes those screens. Keep the file names: the script writes them.
+- **Screenshots 04–06 and 08–14** are the pipeline's, cut by `Tools/Demo/stills.sh all` and
+  copied over their namesakes
+  ([CuWilliams/GFPriceChecker#98](https://github.com/CuWilliams/GFPriceChecker/issues/98)).
+  Re-run it and copy again after a build changes those screens. Keep the file names: the
+  script's table writes them. Two runs come out pixel-identical, so an unchanged screen shows
+  no diff.
 - **Screenshot 01** (launch screen) was hand-captured in October 2026 from the iPhone 17 Pro
   Simulator after the app swapped its wordmark for the GF monogram
   ([CuWilliams/GFPriceChecker#100](https://github.com/CuWilliams/GFPriceChecker/issues/100)).
   The pipeline doesn't cut it: scripted takes replace the launch screen with a flat curtain. To
   redo it, cold-launch the app with `xcrun simctl launch`, take `xcrun simctl io … screenshot`
   inside the 1.5 s hold, and scale to 800 px wide as a JPEG.
-- **Screenshots 09, 11, 12 and 13** (receipt detail, product detail, Library, export) are from
-  January 3 2026, and the product screens lead with the package price difference. They need
-  storyboard marks in the app before the pipeline can cut them.
+- **Screenshot 07** (Capture tab) is from January 2026. Its screen hasn't changed since, though
+  its status bar reads 4:26 where the pipeline's read 9:41. No script stops on it; if the
+  screen changes, it needs a mark in the app first.
+- **Screenshot 04** shows the Smart Scanning onboarding page with its subtitle and tip cut to
+  one line and the page dots over the tip. That's the app as it is on an iPhone 17 Pro, not a
+  capture fault; the January image had the same.
+- **The carousel's `.media-note` was removed** with #98's stills, as the videos section's was
+  before it: every slide shows the current build.
 - **Screenshots 02 and 03 were removed** in October 2026. They showed onboarding copy the app had
   since rewritten, including "Generate professional reports for CRA tax filing", a claim the
   copy sweep can't find because it's in an image. Text in a screenshot falls under the same
@@ -863,5 +871,4 @@ See [Outstanding Work](#outstanding-work) above for what remains.
 **Project Status**: Live at [www.gfpricechecker.com](https://www.gfpricechecker.com), serving an
 app in public TestFlight beta. The Phase 1–6 sections below the design and conventions material are
 a historical record of the January 2026 build, not a description of the site today. Outstanding
-items are listed under [Outstanding Work](#outstanding-work): screenshots showing an older build,
-and legal review.
+items are listed under [Outstanding Work](#outstanding-work): legal review.

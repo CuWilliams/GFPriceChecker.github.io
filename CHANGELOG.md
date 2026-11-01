@@ -36,10 +36,16 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
   ([#20](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/20)).
 
 ### Changed
+- Ten carousel screenshots (slides 2–4 and 6–12: onboarding, pair review, receipt detail and
+  verification, product detail, Library, export and the dashboard) are cut from the app's
+  scripted demo pipeline, from the same build and data as the videos
+  ([#17](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/17),
+  [CuWilliams/GFPriceChecker#98](https://github.com/CuWilliams/GFPriceChecker/issues/98)). The
+  product screens now lead with the size-adjusted differential. The ten files total 1.6 MB, down
+  from 7.2 MB.
 - The launch screen screenshot (carousel slide 1) shows the app's GF monogram in place of the
   retired wordmark, matching the app's change in
   [CuWilliams/GFPriceChecker#100](https://github.com/CuWilliams/GFPriceChecker/issues/100).
-  The carousel's media note now counts it among the current screenshots.
 - The status banner reads "Build 11 is on TestFlight!" It still said build 8.
 - The status banner's text lives only in `data/status.json`. Six pages each carried a hardcoded
   fallback ("Beta Testing! Join our TestFlight beta program.") for before JavaScript ran, which
