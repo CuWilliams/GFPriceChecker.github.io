@@ -54,6 +54,10 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
   file loads, so the page doesn't jump, and the banner is hidden if the file fails to load
   ([#18](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/18)).
 
+### Removed
+- The unused `.media-note` style. Its last user, the carousel's note, went with the new
+  screenshots.
+
 ## [1.3.0] - 2026-10-31
 
 New walkthrough videos from the app's scripted demo pipeline, and the app's GF monogram across the site ([#19](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/19), [#25](https://github.com/CuWilliams/GFPriceChecker.github.io/pull/25)).

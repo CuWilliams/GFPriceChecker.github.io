@@ -465,8 +465,9 @@ pipeline covers.
 - **Screenshot 04** shows the Smart Scanning onboarding page with its subtitle and tip cut to
   one line and the page dots over the tip. That's the app as it is on an iPhone 17 Pro, not a
   capture fault; the January image had the same.
-- **The carousel's `.media-note` was removed** with #98's stills, as the videos section's was
-  before it: every slide shows the current build.
+- **The carousel's media note was removed** with #98's stills, as the videos section's was
+  before it: every slide shows the current build. Its `.media-note` style went too. If media
+  falls behind the build again, say so in a note, and bring the style back with it.
 - **Screenshots 02 and 03 were removed** in October 2026. They showed onboarding copy the app had
   since rewritten, including "Generate professional reports for CRA tax filing", a claim the
   copy sweep can't find because it's in an image. Text in a screenshot falls under the same
@@ -475,7 +476,7 @@ pipeline covers.
   pipeline (GFPriceChecker #45, `Tools/Demo/site.sh`). They are 1920×1080 at 60 fps, with
   the captions burned in and a silent audio track. The hand-recorded originals were silent
   too. They come to 1–2 MB each, so regenerating them per build costs the repo little. The
-  videos section's `.media-note` went with them, and the screenshots section keeps its own.
+  videos section's media note went with them.
 - **The video posters** were redrawn at the same time, at 1920×1080 to match the videos. Each
   one shows the app's GF monogram icon (`docs/brand/` in the app repo) over its video's title.
   The old posters carried the retired wordmark, and one carried the tagline "Generate CRA-Ready
