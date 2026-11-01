@@ -252,6 +252,14 @@ Mobile-first approach with the following breakpoints:
 - ✅ Semantic HTML5 landmarks (nav, main, footer)
 - ✅ ARIA labels where semantic HTML is insufficient
 - ✅ Alt text on all images
+- ✅ Captions on every video, burned in and as a VTT track
+
+### Video captions
+Each video carries its captions twice: burned into the frame, and as a `<track kind="captions">`
+pointing at the `.vtt` beside it in `assets/video/`. The app's `composite.py` writes both from the
+same storyboard captions, so copy each `.vtt` over with its video and the two stay in step. The
+track gives text that the player can restyle and resize; the burned-in card is what everyone sees
+with captions off (#20).
 
 ### Keyboard Shortcuts
 - **Tab**: Navigate through interactive elements
@@ -473,10 +481,6 @@ pipeline covers.
   the name and "Track what gluten-free products really cost", from the pages' own
   `og:description`. `og-image-original.png`, an unused copy of the old card, was deleted.
 - Keep video files under 50MB. The app's `composite.py` fails on one that size.
-
-### Videos have no captions
-No VTT track exists for any video. This was deferred at launch and is still open; it's the site's
-most significant remaining accessibility gap.
 
 ### Legal review
 `privacy.html` and `terms.html` were revised on January 25 2026 and no longer carry placeholder
@@ -859,5 +863,5 @@ See [Outstanding Work](#outstanding-work) above for what remains.
 **Project Status**: Live at [www.gfpricechecker.com](https://www.gfpricechecker.com), serving an
 app in public TestFlight beta. The Phase 1–6 sections below the design and conventions material are
 a historical record of the January 2026 build, not a description of the site today. Outstanding
-items are listed under [Outstanding Work](#outstanding-work): media showing an older build, missing
-video captions, and legal review.
+items are listed under [Outstanding Work](#outstanding-work): screenshots showing an older build,
+and legal review.

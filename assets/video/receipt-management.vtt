@@ -1,0 +1,29 @@
+WEBVTT
+
+1
+00:00:00.637 --> 00:00:03.477
+Verifying product pairs against a receipt
+
+2
+00:00:03.477 --> 00:00:07.610
+Pick the pairs you bought on this receipt
+
+3
+00:00:07.610 --> 00:00:12.412
+Then scan the receipt
+
+4
+00:00:12.412 --> 00:00:17.397
+For each product, the app suggests the receipt line it was bought on
+
+5
+00:00:17.397 --> 00:00:22.034
+Select the line, and confirm it
+
+6
+00:00:22.034 --> 00:00:27.467
+Save, and every pair on the receipt is verified
+
+7
+00:00:27.467 --> 00:00:32.124
+The receipt is kept with its image and the products it verifies

@@ -29,6 +29,12 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
 
 ## [Unreleased]
 
+### Added
+- Caption tracks for the three walkthrough videos. Each `<video>` on the features page has a
+  `<track kind="captions">` loading a `.vtt` of the same captions that are burned into the
+  video, written by the app's demo pipeline alongside it
+  ([#20](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/20)).
+
 ### Changed
 - The launch screen screenshot (carousel slide 1) shows the app's GF monogram in place of the
   retired wordmark, matching the app's change in
