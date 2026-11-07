@@ -29,6 +29,9 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
 
 ## [Unreleased]
 
+The site is retired at the end of December 2026: the gfpricechecker.com domain is not renewed
+past December 29, GitHub Pages is turned off, and the repository is archived as a record.
+
 GF PriceChecker is no longer in development. Budget 2026 proposes a flat $1,000 celiac claim
 under the Medical Expense Tax Credit, which removes most of the record-keeping the app was built
 for. The site now records that, rather than promoting a coming release. A change in what the site
@@ -71,6 +74,7 @@ is for, so these entries suggest **2.0.0**.
   ([#18](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/18)).
 
 ### Removed
+- `CNAME`. The custom domain goes with the registration, and the site with it.
 - The unused `.beta-steps` and `.beta-focus-list` styles. Their only user, the beta page's
   join steps and testing focus list, went with the closed-beta notice.
 - The unused `.media-note` style. Its last user, the carousel's note, went with the new

@@ -2,7 +2,13 @@
 
 The marketing and documentation website for **GF PriceChecker**, an iOS app that helps Canadians measure and document the price premium on gluten-free groceries.
 
-Live at [gfpricechecker.com](https://www.gfpricechecker.com). The app itself lives in a separate repository: [CuWilliams/GFPriceChecker](https://github.com/CuWilliams/GFPriceChecker).
+> **Retired.** The site was taken offline at the end of December 2026, when the gfpricechecker.com
+> domain lapsed, and this repository is archived as a record of it. GF PriceChecker ended
+> development in November 2026, after Budget 2026 proposed a flat $1,000 celiac claim under the
+> Medical Expense Tax Credit. The posts and announcements are readable in [`data/`](data/), and the
+> pages as HTML. Everything below describes the site as it was.
+
+Was live at gfpricechecker.com. The app itself lives in a separate repository: [CuWilliams/GFPriceChecker](https://github.com/CuWilliams/GFPriceChecker).
 
 ## How the site is built
 
@@ -99,7 +105,6 @@ Site releases are annotated git tags on `main`, with history in [CHANGELOG.md](C
 
 - **X (Twitter):** [@CurtisWill3z](https://x.com/CurtisWill3z)
 - **LinkedIn:** [Curtis Williams](https://www.linkedin.com/in/curtis-williams-154382b3)
-- **Email:** support@gfpricechecker.com
 
 ## License
 

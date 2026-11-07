@@ -50,7 +50,7 @@ This project follows **DESIGN-SYSTEM.md** guidelines:
 ├── terms.html                  # Terms of use
 ├── sitemap.xml                 # XML sitemap for SEO
 ├── robots.txt                  # Search engine crawl rules
-├── CNAME                       # GitHub Pages custom domain
+├── (CNAME)                     # removed Dec 2026 with the domain; the site is retired
 ├── README.md                   # How the site is built, run, and added to
 ├── CHANGELOG.md                # Site release history and versioning approach
 ├── Claude.md                   # This file - project documentation
@@ -869,7 +869,9 @@ See [Outstanding Work](#outstanding-work) above for what remains.
 
 *Last Updated: November 7, 2026*
 
-**Project Status**: Live at [www.gfpricechecker.com](https://www.gfpricechecker.com). The app is
+**Project Status**: **Retired at the end of December 2026.** The gfpricechecker.com domain was
+not renewed past December 29, 2026, GitHub Pages is off, and the repo is archived. Rules below
+about the canonical host and `CNAME` describe the site as it ran. Before that: the app is
 no longer in development: Budget 2026 proposed a flat $1,000 celiac claim, the public beta closed
 to new testers on November 7, 2026, and the app's code is open source. The site now records that
 rather than promoting a release. The Phase 1–6 sections below the design and conventions material are
