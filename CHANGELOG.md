@@ -43,8 +43,9 @@ is for, so these entries suggest **2.0.0**.
   ([#20](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/20)).
 
 ### Changed
-- The status banner reads "GF PriceChecker is no longer in development." with a link to the
-  announcement (state `maintenance`).
+- The status banner reads "GF PriceChecker is no longer in development, and this site closes at
+  the end of December 2026." with a link to the announcement (state `maintenance`). Announcement
+  4 says the same, and that the domain and support email stop working with it.
 - The home page hero says the app is no longer in development, and the Celiac Canada advocacy
   card now covers the Budget 2026 flat claim and that it isn't law yet.
 - The beta page is a closed-beta notice: no TestFlight link, export advice for existing testers,
