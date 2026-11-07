@@ -19,7 +19,7 @@ Two ideas do most of the work:
 ```
 ├── index.html                 # Home
 ├── features.html              # What the app does, screenshots, walkthrough videos
-├── beta.html                  # TestFlight instructions and testing focus areas
+├── beta.html                  # Beta closed: notice for existing testers
 ├── blog.html                  # Developer blog (rendered from data/blog.json)
 ├── announcements.html         # Release announcements
 ├── faq.html                   # Frequently asked questions

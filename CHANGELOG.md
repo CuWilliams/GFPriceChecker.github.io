@@ -29,13 +29,29 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
 
 ## [Unreleased]
 
+GF PriceChecker is no longer in development. Budget 2026 proposes a flat $1,000 celiac claim
+under the Medical Expense Tax Credit, which removes most of the record-keeping the app was built
+for. The site now records that, rather than promoting a coming release. A change in what the site
+is for, so these entries suggest **2.0.0**.
+
 ### Added
+- The blog post "A Good Day" and announcement 4, on the Budget 2026 measure and the end of the
+  app's development.
 - Caption tracks for the three walkthrough videos. Each `<video>` on the features page has a
   `<track kind="captions">` loading a `.vtt` of the same captions that are burned into the
   video, written by the app's demo pipeline alongside it
   ([#20](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/20)).
 
 ### Changed
+- The status banner reads "GF PriceChecker is no longer in development." with a link to the
+  announcement (state `maintenance`).
+- The home page hero says the app is no longer in development, and the Celiac Canada advocacy
+  card now covers the Budget 2026 flat claim and that it isn't law yet.
+- The beta page is a closed-beta notice: no TestFlight link, export advice for existing testers,
+  and a link to the open-source code. The features page's beta call to action now points to the
+  code on GitHub.
+- FAQ 2 mentions the proposed flat claim; FAQ 7 asks "Is the app still available?" and answers
+  no.
 - Ten carousel screenshots (slides 2–4 and 6–12: onboarding, pair review, receipt detail and
   verification, product detail, Library, export and the dashboard) are cut from the app's
   scripted demo pipeline, from the same build and data as the videos
@@ -55,6 +71,8 @@ gh release create v1.3.0 --title "v1.3.0 - Short description" --notes-file <note
   ([#18](https://github.com/CuWilliams/GFPriceChecker.github.io/issues/18)).
 
 ### Removed
+- The unused `.beta-steps` and `.beta-focus-list` styles. Their only user, the beta page's
+  join steps and testing focus list, went with the closed-beta notice.
 - The unused `.media-note` style. Its last user, the carousel's note, went with the new
   screenshots.
 
