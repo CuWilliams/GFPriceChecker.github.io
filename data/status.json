@@ -1,6 +1,6 @@
 {
-  "state": "testflight",
-  "message": "Build 11 is on TestFlight!",
-  "linkText": "Join the beta.",
-  "link": "/beta.html"
+  "state": "maintenance",
+  "message": "GF PriceChecker is no longer in development.",
+  "linkText": "Read why.",
+  "link": "/announcements.html"
 }

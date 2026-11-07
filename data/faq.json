@@ -7,7 +7,7 @@
   {
     "id": "2",
     "question": "How does this relate to the Medical Expense Tax Credit?",
-    "answer": "For someone with celiac disease, the extra cost of gluten-free food is a medical expense, and Canada's Medical Expense Tax Credit recognizes the difference in price between a gluten-free product and its regular equivalent. Claiming it means keeping itemized records and producing them if asked. That record-keeping is what this app is for. It does not file anything, does not tell you what you are eligible to claim, and makes no claim of being approved or endorsed by any tax authority — what you do with your records is between you and your accountant. Worth knowing before you start: the credit only applies to medical expenses above a threshold of roughly three percent of your net income, so a modest year of gluten-free purchases may not reach it on its own."
+    "answer": "For someone with celiac disease, the extra cost of gluten-free food is a medical expense, and Canada's Medical Expense Tax Credit recognizes the difference in price between a gluten-free product and its regular equivalent. Claiming it means keeping itemized records and producing them if asked. That record-keeping is what this app was for. Budget 2026 proposes an optional flat $1,000 claim instead, starting with the 2026 tax year, with no need to calculate the extra cost or keep receipts for it; it becomes law only once Parliament passes it. It does not file anything, does not tell you what you are eligible to claim, and makes no claim of being approved or endorsed by any tax authority — what you do with your records is between you and your accountant. Worth knowing before you start: the credit only applies to medical expenses above a threshold of roughly three percent of your net income, so a modest year of gluten-free purchases may not reach it on its own."
   },
   {
     "id": "3",
@@ -31,7 +31,7 @@
   },
   {
     "id": "7",
-    "question": "When will the app be available?",
-    "answer": "GF PriceChecker is in public beta on TestFlight now, and you can use it today — visit the Beta page for instructions and the link. It's free, with no ads, and it will stay that way on the App Store. Feedback from beta testers is actively shaping the app, so if something is confusing or wrong, please say so through TestFlight."
+    "question": "Is the app still available?",
+    "answer": "No. GF PriceChecker is no longer in development, and it won't be released on the App Store or Google Play. The public TestFlight beta closed to new testers in November 2026, after Budget 2026 proposed a flat $1,000 claim that removes most of the record-keeping the app was built for. The source code is open source on GitHub, at github.com/CuWilliams/GFPriceChecker, for anyone who wants to build on it. If you already have the beta installed, export a backup from Settings and your PDF or CSV records from the Reports tab: TestFlight builds expire, and once the last one does, the app will no longer open."
   }
 ]

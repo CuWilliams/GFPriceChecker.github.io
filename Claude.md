@@ -42,7 +42,7 @@ This project follows **DESIGN-SYSTEM.md** guidelines:
 /
 ├── index.html                  # Home page
 ├── features.html               # Features page with carousel
-├── beta.html                   # TestFlight beta instructions
+├── beta.html                   # Beta closed: notice for existing testers
 ├── blog.html                   # Developer blog posts
 ├── announcements.html          # News and updates page
 ├── faq.html                    # Frequently asked questions
@@ -867,9 +867,11 @@ See [Outstanding Work](#outstanding-work) above for what remains.
 
 ---
 
-*Last Updated: August 13, 2026*
+*Last Updated: November 7, 2026*
 
-**Project Status**: Live at [www.gfpricechecker.com](https://www.gfpricechecker.com), serving an
-app in public TestFlight beta. The Phase 1–6 sections below the design and conventions material are
+**Project Status**: Live at [www.gfpricechecker.com](https://www.gfpricechecker.com). The app is
+no longer in development: Budget 2026 proposed a flat $1,000 celiac claim, the public beta closed
+to new testers on November 7, 2026, and the app's code is open source. The site now records that
+rather than promoting a release. The Phase 1–6 sections below the design and conventions material are
 a historical record of the January 2026 build, not a description of the site today. Outstanding
 items are listed under [Outstanding Work](#outstanding-work): legal review.
